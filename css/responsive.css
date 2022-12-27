@@ -375,7 +375,7 @@ header { position: relative; background: #1e2327; }
 .page-section-ptb { padding: 40px 0; }
 h2,h3 { font-size: 30px;line-height: 30px; }
 .pricing-grid .pricing-table .pricing-title h2 { font-size: 30px; line-height: 30px; }
-.tabs ul.tabs-link li{  font-size: 0; }
+/*.tabs ul.tabs-link li{  font-size: 0; }*/
 .tabs ul.tabs-link.without-icon li{  font-size: 22px; }
 .tabs ul.tabs-link li i:before { font-size: 28px; }
 .menu-body.menu-left .menu-thumbnail { float: none; width: 100%; margin-bottom: 15px; }

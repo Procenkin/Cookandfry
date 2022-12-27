@@ -117,24 +117,24 @@ NOTE:
                 name: 'Холодное блюдо',
                 description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
             },
-            {
-                id: 4,
-                category: 'coldAppetizers',
-                price: 130,
-                available: true,
-                positionLeft: true,
-                name: 'Холодное блюдо',
-                description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
-            },
-            {
-                id: 5,
-                category: 'coldAppetizers',
-                price: 140,
-                available: true,
-                positionLeft: true,
-                name: 'Холодное блюдо',
-                description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
-            },
+            // {
+            //     id: 4,
+            //     category: 'coldAppetizers',
+            //     price: 130,
+            //     available: true,
+            //     positionLeft: true,
+            //     name: 'Холодное блюдо',
+            //     description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
+            // },
+            // {
+            //     id: 5,
+            //     category: 'coldAppetizers',
+            //     price: 140,
+            //     available: true,
+            //     positionLeft: true,
+            //     name: 'Холодное блюдо',
+            //     description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
+            // },
             {
                 id: 6,
                 category: 'coldAppetizers',
@@ -153,39 +153,39 @@ NOTE:
                 name: 'Холодное блюдо',
                 description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
             },
-            {
-                id: 8,
-                category: 'coldAppetizers',
-                price: 170,
-                available: false,
-                positionLeft: false,
-                name: 'Холодное блюдо',
-                description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
-            },
-            {
-                id: 9,
-                category: 'coldAppetizers',
-                price: 180,
-                available: false,
-                positionLeft: false,
-                name: 'Холодное блюдо',
-                description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
-            },
-            {
-                id: 10,
-                category: 'coldAppetizers',
-                price: 190,
-                available: false,
-                positionLeft: false,
-                name: 'Холодное блюдо',
-                description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
-            },
+            // {
+            //     id: 8,
+            //     category: 'coldAppetizers',
+            //     price: 170,
+            //     available: false,
+            //     positionLeft: false,
+            //     name: 'Холодное блюдо',
+            //     description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
+            // },
+            // {
+            //     id: 9,
+            //     category: 'coldAppetizers',
+            //     price: 180,
+            //     available: false,
+            //     positionLeft: false,
+            //     name: 'Холодное блюдо',
+            //     description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
+            // },
+            // {
+            //     id: 10,
+            //     category: 'coldAppetizers',
+            //     price: 190,
+            //     available: false,
+            //     positionLeft: false,
+            //     name: 'Холодное блюдо',
+            //     description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
+            // },
         ]
         let htmlLeft = ''
         let htmlRight = ''
         for (let i = 0; i < catalog.length; i++) {
             if (catalog[i].positionLeft) {
-                htmlLeft += '<div class="menu-body menu-left">\n' +
+                htmlLeft += '<div data-param-id="' + catalog[i].id + '" class="menu-body menu-left">\n' +
                     '                    <div class="menu-thumbnail">\n' +
                     '                      <img class="img-fluid center-block" src="images/dish/01.png" alt="">\n' +
                     '                    </div>\n' +
@@ -200,7 +200,7 @@ NOTE:
                     '                    </div>\n' +
                     '                  </div>'
             } else {
-                htmlRight += '<div class="menu-body menu-left">\n' +
+                htmlRight += '<div data-param-id="' + catalog[i].id + '" class="menu-body menu-left">\n' +
                     '                    <div class="menu-thumbnail">\n' +
                     '                      <img class="img-fluid center-block" src="images/dish/01.png" alt="">\n' +
                     '                    </div>\n' +
@@ -219,6 +219,12 @@ NOTE:
         $('#menuCatalogLeft').html(htmlLeft)
         $('#menuCatalogRight').html(htmlRight)
 
+    }
+
+    POTENZA.handleClickCatalog = function () {
+        $('.menu-body').click((event)=>{
+            console.log(event.target)
+        })
     }
 
     /*************************
@@ -265,7 +271,7 @@ NOTE:
             else $goToTop.fadeOut();
         });
         $goToTop.on("click", function () {
-            $('body,html').animate({scrollTop: 0}, 1000);
+            $('body,html').animate({scrollTop: 0}, 10);
             return false;
         });
     }
@@ -550,6 +556,7 @@ NOTE:
         POTENZA.goToTop(),
             POTENZA.menuRender(),
             POTENZA.menuCatalog(),
+            POTENZA.handleClickCatalog(),
             POTENZA.preloader(),
             POTENZA.Isotope(),
             POTENZA.masonry(),
