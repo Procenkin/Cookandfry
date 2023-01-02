@@ -282,7 +282,7 @@ header -->
 <!--                  </li>-->
 <!--                </ul>-->
 <!--              </li>-->
-            <li><a href="#"> Корзина</a></li>
+                    <li><a class="orderCount" href="javascript:void(0)">Корзина </a></li>
           </ul>
         </div>
        </div>
@@ -1278,5 +1278,21 @@ The following part can be removed on Server for On Demand Loading) -->
 <!-- custom -->
 <script type="text/javascript" src="js/custom.js"></script>
 <script></script>
+<div id="modal-food" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title modal-title-modal-food"></h5>
+                <button type="button" class="btn-close btn-close-modal-food" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-body-modal-food">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-close-modal-food" data-bs-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary btn-close-modal-buy">В корзину</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

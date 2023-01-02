@@ -818,6 +818,9 @@ table tr td a { color: #e93e21; }
 
 /*menu whitebg*/
 .menu-body.menu-white .menu-title h4, .menu-body.menu-white p { color: #1e2327; }
+.menu-title {
+    cursor: pointer;
+}
 
 /*menu left*/
 .menu-body.menu-left { text-align: left; }
@@ -1394,6 +1397,9 @@ blockquote cite { font-size: 14px; margin-top: 15px; display: block; font-weight
 .social-ico a { color: #9a9a9a; font-size: 16px; }
 .social-ico a:hover { color: #e93e21; }
 
+.orderCount {
+    color: #fff;
+}
 /*hack code ie 9*/
 @media all and (min-width:0\0) and (min-resolution:.001dpcm) {
     .no-csstransforms3d [data-book='book-1'].book, .no-js [data-book='book-1'].book, [data-book='book-1'].book .front { background: #1e2327 url(../images/menu/menu-cover.png); background-size: cover; }

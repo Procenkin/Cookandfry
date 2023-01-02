@@ -165,6 +165,22 @@
                 },
             ]
         },
+        ORDER = {
+            id: null,
+            createOrder: null,
+            dishes: [],
+            customer: {
+                fierstName: null,
+                lastName: null,
+                adress: {
+                    country: 'Russia',
+                    street: null,
+                    floor: null,
+                    description: null
+                }
+            },
+            summ: 0
+        },
         $window = $(window),
         $document = $(document),
         $body = $('body'),
@@ -184,6 +200,48 @@
         //$("#load").fadeOut();
         $('#loading').delay(0).fadeOut('slow');
     };
+
+    FOOD.handInfoDish = function () {
+        $('.btn-close-modal-food').click(() => {
+            $('#modal-food').hide()
+        })
+
+        $('.menu-title-js').click((e) => {
+            $('#modal-food').show()
+            let id = e.currentTarget.getAttribute('data-param-id');
+            let dish = FOOD.getDish(id)
+            $('#modal-food').attr('data-param-id', id)
+            $('.modal-title-modal-food').html(dish.name)
+            $('.modal-body-modal-food').html(`
+                    <p>${dish.description}</p>
+                    <p>Цена: ${dish.price} Р</p>
+                    `)
+            $('.btn-close-modal-buy').click((e) => {
+                FOOD.changeOrder(id)
+            })
+        })
+    }
+
+    FOOD.changeOrder = function (id) {
+        let dish = FOOD.getDish(id)
+        ORDER.dishes.push(dish)
+        ORDER.summ = ORDER.summ + dish.price
+        $('.orderCount').html(`Корзина | ${ORDER.dishes.length}`)
+        FOOD.modalOrder()
+    }
+
+    FOOD.modalOrder = function () {
+        // зкорзина
+        $('.modal-food').show()
+
+    }
+
+    FOOD.getDish = function (id) {
+        // достать из каталога товар по ID
+        for (let i = 0; i < FOOD.catalog.length; i++) {
+            if (FOOD.catalog[i].id == id) return FOOD.catalog[i]
+        }
+    }
 
     FOOD.menuRender = function () {
         let html = ''
@@ -207,7 +265,7 @@
 
         $('#tabMenuHome').html(html)
         $('#tab-content-menu').html(tab)
-        FOOD.handleClickCatalog()
+        FOOD.changeTabMenu()
     }
 
     FOOD.menuCatalog = function () {
@@ -222,7 +280,7 @@
                     '                      <img class="img-fluid center-block" src="images/dish/01.png" alt="">\n' +
                     '                    </div>\n' +
                     '                    <div class="menu-details">\n' +
-                    '                      <div class="menu-title clearfix">\n' +
+                    '                      <div data-param-id="' + filterCatalog[i].id + '" class="menu-title-js menu-title clearfix">\n' +
                     '                        <h4>' + filterCatalog[i].name + '</h4>\n' +
                     '                        <span class="price"> ' + filterCatalog[i].price + ' Р</span>\n' +
                     '                      </div>\n' +
@@ -237,7 +295,7 @@
                     '                      <img class="img-fluid center-block" src="images/dish/01.png" alt="">\n' +
                     '                    </div>\n' +
                     '                    <div class="menu-details">\n' +
-                    '                      <div class="menu-title clearfix">\n' +
+                    '                      <div data-param-id="' + filterCatalog[i].id + '" class="menu-title-js menu-title clearfix">\n' +
                     '                        <h4>' + filterCatalog[i].name + '</h4>\n' +
                     '                        <span class="price"> ' + filterCatalog[i].price + ' Р</span>\n' +
                     '                      </div>\n' +
@@ -253,11 +311,14 @@
 
     }
 
-    FOOD.handleClickCatalog = function () {
+    FOOD.changeTabMenu = function () {
         $('.nav-link').click((event) => {
             $('.tab-pane').removeClass('show')
             $('.tab-pane').removeClass('active')
             $('.tab-pane').addClass('fade')
+            $(`#menu${FOOD.nameActiveCategory}Left`).empty();
+            $(`#menu${FOOD.nameActiveCategory}Right`).empty();
+
             let paramId = event.target.getAttribute('id');
             let name = event.target.getAttribute('data-bs-target');
             if (paramId !== null) {
@@ -267,7 +328,7 @@
                 $(`#${FOOD.nameActiveCategory}`).addClass('show active')
                 FOOD.menuCatalog()
             }
-            console.log(FOOD)
+            FOOD.handInfoDish()
         })
     }
 
@@ -600,8 +661,8 @@
         FOOD.goToTop(),
             FOOD.menuRender(),
             FOOD.menuCatalog(),
-            // FOOD.handleClickCatalog(),
-            FOOD.preloader(),
+            FOOD.handInfoDish()
+        FOOD.preloader(),
             FOOD.Isotope(),
             FOOD.masonry(),
             FOOD.caldatapicker(),
@@ -624,19 +685,6 @@
 })(jQuery);
 
 // Below code is not part of template
-$(document).ready(function () {
-    console.log('hello')
-    // $.ajax({
-    //   url: '',
-    //   type: 'post',
-    //   //dataType: 'json',
-    //   data:'',
-    //   success: function(response){
-    //console.log(response)
-    //   },
-    //
-    // });
-});
 $(document).on('click', 'a.frame-close', function (e) {
     $('.header-preview').slideUp();
 });
