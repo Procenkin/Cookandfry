@@ -136,7 +136,6 @@ NOTE: This file includes all revolution slider scripts.
        origo:"enterpoint",
        speed:400,
        levels:[5,10,15,20,25,30,35,40,45,46,47,48,49,50,51,55],
-       type:"mouse",
       },
       shadow:0,
       spinner:"spinner2",

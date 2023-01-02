@@ -1,15 +1,3 @@
-/*
-
-Template: The Zayka - Multipurpose Restaurant, Food & Cafe HTML5 Template
-Author: potenzaglobalsolutions.com
-Version: 1.0
-Design and Developed by: potenzaglobalsolutions.com
-
-NOTE:
-
-*/
-
-
 /*================================================
 [  Table of contents  ]
 ================================================
@@ -43,7 +31,140 @@ NOTE:
     /*************************
      Predefined Variables
      *************************/
-    var POTENZA = {},
+    var FOOD = {
+            activeCategory: 1,
+            nameActiveCategory: 'coldSnacks',
+            menu: [
+                {id: 1, description: 'Холодные закуски', name: 'coldSnacks', target: 'coldSnacks', active: true},
+                {id: 2, description: 'Салаты', name: 'salads', target: 'salads', active: false},
+                {id: 3, description: 'Супы', name: 'soups', target: 'soups', active: false},
+                {id: 4, description: 'Горячие блюда', name: 'hotDishes', target: 'hotDishes', active: false},
+                {id: 5, description: 'Фирменное', name: 'branded', target: 'branded', active: false},
+                {id: 6, description: 'Соусы', name: 'sauces', target: 'sauces', active: false},
+                {id: 7, description: 'Десерты', name: 'dessert', target: 'dessert', active: false},
+                {id: 8, description: 'Выпечка', name: 'bakery', target: 'bakery', active: false},
+                {id: 9, description: 'Напитки', name: 'drinks', target: 'drinks', active: false},
+            ],
+            catalog: [
+                {
+                    id: 1,
+                    category: 1,
+                    price: 200,
+                    available: true,
+                    positionLeft: true,
+                    name: 'Холодец Холодное блюдо',
+                    description: 'Сытное блюдо из сгустившегося до желеобразной массы от охлаждения мясного бульона с кусочками мяса. Известен с XVI века[1]. В русской кухне является популярной холодной закуской на праздничном столе'
+                },
+                {
+                    id: 10,
+                    category: 1,
+                    price: 200,
+                    available: true,
+                    positionLeft: true,
+                    name: 'Холодец Холодное блюдо',
+                    description: 'Сытное блюдо из сгустившегося до желеобразной массы от охлаждения мясного бульона с кусочками мяса. Известен с XVI века[1]. В русской кухне является популярной холодной закуской на праздничном столе'
+                },
+                {
+                    id: 20,
+                    category: 1,
+                    price: 200,
+                    available: true,
+                    positionLeft: true,
+                    name: 'Холодец Холодное блюдо',
+                    description: 'Сытное блюдо из сгустившегося до желеобразной массы от охлаждения мясного бульона с кусочками мяса. Известен с XVI века[1]. В русской кухне является популярной холодной закуской на праздничном столе'
+                },
+                {
+                    id: 30,
+                    category: 1,
+                    price: 200,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Холодец Холодное блюдо',
+                    description: 'Сытное блюдо из сгустившегося до желеобразной массы от охлаждения мясного бульона с кусочками мяса. Известен с XVI века[1]. В русской кухне является популярной холодной закуской на праздничном столе'
+                },
+                {
+                    id: 40,
+                    category: 1,
+                    price: 200,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Холодец Холодное блюдо',
+                    description: 'Сытное блюдо из сгустившегося до желеобразной массы от охлаждения мясного бульона с кусочками мяса. Известен с XVI века[1]. В русской кухне является популярной холодной закуской на праздничном столе'
+                },
+                {
+                    id: 50,
+                    category: 2,
+                    price: 110,
+                    available: true,
+                    positionLeft: true,
+                    name: 'Цезарь',
+                    description: 'Один из самых популярных салатов, приготовленный дома! Салат-легенда, названный так совсем не в честь римского императора, а взявший имя шеф-повара Цезаря Кардини, который, по легенде, накормил однажды голливудских актеров салатом из того, что было. '
+                },
+                {
+                    id: 60,
+                    category: 2,
+                    price: 110,
+                    available: true,
+                    positionLeft: true,
+                    name: 'Цезарь',
+                    description: 'Один из самых популярных салатов, приготовленный дома! Салат-легенда, названный так совсем не в честь римского императора, а взявший имя шеф-повара Цезаря Кардини, который, по легенде, накормил однажды голливудских актеров салатом из того, что было. '
+                },
+                {
+                    id: 70,
+                    category: 2,
+                    price: 110,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Цезарь',
+                    description: 'Один из самых популярных салатов, приготовленный дома! Салат-легенда, названный так совсем не в честь римского императора, а взявший имя шеф-повара Цезаря Кардини, который, по легенде, накормил однажды голливудских актеров салатом из того, что было. '
+                },
+                {
+                    id: 80,
+                    category: 2,
+                    price: 110,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Цезарь',
+                    description: 'Один из самых популярных салатов, приготовленный дома! Салат-легенда, названный так совсем не в честь римского императора, а взявший имя шеф-повара Цезаря Кардини, который, по легенде, накормил однажды голливудских актеров салатом из того, что было. '
+                },
+                {
+                    id: 90,
+                    category: 3,
+                    price: 120,
+                    available: true,
+                    positionLeft: true,
+                    name: 'Борщ',
+                    description: 'Горячий заправочный суп на основе свёклы, которая придаёт ему характерный красный цвет. '
+                },
+                {
+                    id: 100,
+                    category: 3,
+                    price: 120,
+                    available: true,
+                    positionLeft: true,
+                    name: 'Борщ',
+                    description: 'Горячий заправочный суп на основе свёклы, которая придаёт ему характерный красный цвет. '
+                },
+                {
+                    id: 110,
+                    category: 3,
+                    price: 120,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Борщ',
+                    description: 'Горячий заправочный суп на основе свёклы, которая придаёт ему характерный красный цвет. '
+                },
+                {
+                    id: 120,
+                    category: 3,
+                    price: 120,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Борщ',
+                    description: 'Горячий заправочный суп на основе свёклы, которая придаёт ему характерный красный цвет. '
+                },
+            ]
+        },
         $window = $(window),
         $document = $(document),
         $body = $('body'),
@@ -59,178 +180,101 @@ NOTE:
     /*************************
      Preloader
      *************************/
-    POTENZA.preloader = function () {
+    FOOD.preloader = function () {
         //$("#load").fadeOut();
         $('#loading').delay(0).fadeOut('slow');
     };
 
-    POTENZA.menuRender = function () {
-        let menu = [
-            {name: 'Холодные закуски', id: 'breakfast-tab', target: '#breakfast', active: true},
-            {name: 'Салаты', id: 'breakfast-tab', target: '#breakfast', active: false},
-            {name: 'Супы', id: 'breakfast-tab', target: '#breakfast', active: false},
-            {name: 'Горячие блюда', id: 'breakfast-tab', target: '#breakfast', active: false},
-            {name: 'Фирменное', id: 'breakfast-tab', target: '#breakfast', active: false},
-            {name: 'Соусы', id: 'breakfast-tab', target: '#breakfast', active: false},
-            {name: 'Десерты', id: 'breakfast-tab', target: '#breakfast', active: false},
-            {name: 'Выпечка', id: 'breakfast-tab', target: '#breakfast', active: false},
-            {name: 'Напитки', id: 'breakfast-tab', target: '#breakfast', active: false},
-        ]
+    FOOD.menuRender = function () {
         let html = ''
-        for (let i = 0; i < menu.length; i++) {
+        let tab = ''
+        for (let i = 0; i < FOOD.menu.length; i++) {
+            let active = FOOD.activeCategory === FOOD.menu[i].id ? ' active show ' : ' fade ';
             html += '<li class="nav-item" role="presentation">\n' +
                 '              <button class="nav-link ';
-            menu[i].active ? html += " active " : ""
-            html += '" id="' + menu[i].id + '" data-bs-toggle="tab" data-bs-target="' + menu[i].target + '" type="button" role="tab" aria-controls="breakfast" aria-selected="true">' + menu[i].name + '</button>\n' +
+            FOOD.activeCategory === FOOD.menu[i].id ? html += " active " : ""
+            html += '" id="' + FOOD.menu[i].id + '" data-bs-toggle="tab" data-bs-target="' + FOOD.menu[i].target + '" type="button" role="tab" aria-controls="breakfast" aria-selected="true">' + FOOD.menu[i].description + '</button>\n' +
                 '            </li>'
+
+            tab +=
+                '<div class="tab-pane ' + active + '" id="' + FOOD.menu[i].name + '" role="tabpanel" aria-labelledby="' + FOOD.menu[i].name + '">'
+                + '<div class="row">'
+                + '<div id="menu' + FOOD.menu[i].name + 'Left" class="col-lg-6 col-md-6"></div>'
+                + '<div id="menu' + FOOD.menu[i].name + 'Right" class="col-lg-6 col-md-6"></div>'
+                + '</div></div>'
+
         }
 
         $('#tabMenuHome').html(html)
+        $('#tab-content-menu').html(tab)
+        FOOD.handleClickCatalog()
     }
 
-    POTENZA.menuCatalog = function () {
-        let catalog = [
-            {
-                id: 1,
-                category: 'coldAppetizers',
-                price: 100,
-                available: true,
-                positionLeft: true,
-                name: 'Холодное блюдо',
-                description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
-            },
-            {
-                id: 2,
-                category: 'coldAppetizers',
-                price: 110,
-                available: true,
-                positionLeft: true,
-                name: 'Холодное блюдо',
-                description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
-            },
-            {
-                id: 3,
-                category: 'coldAppetizers',
-                price: 120,
-                available: true,
-                positionLeft: true,
-                name: 'Холодное блюдо',
-                description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
-            },
-            // {
-            //     id: 4,
-            //     category: 'coldAppetizers',
-            //     price: 130,
-            //     available: true,
-            //     positionLeft: true,
-            //     name: 'Холодное блюдо',
-            //     description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
-            // },
-            // {
-            //     id: 5,
-            //     category: 'coldAppetizers',
-            //     price: 140,
-            //     available: true,
-            //     positionLeft: true,
-            //     name: 'Холодное блюдо',
-            //     description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
-            // },
-            {
-                id: 6,
-                category: 'coldAppetizers',
-                price: 150,
-                available: false,
-                positionLeft: false,
-                name: 'Холодное блюдо',
-                description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
-            },
-            {
-                id: 7,
-                category: 'coldAppetizers',
-                price: 160,
-                available: false,
-                positionLeft: false,
-                name: 'Холодное блюдо',
-                description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
-            },
-            // {
-            //     id: 8,
-            //     category: 'coldAppetizers',
-            //     price: 170,
-            //     available: false,
-            //     positionLeft: false,
-            //     name: 'Холодное блюдо',
-            //     description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
-            // },
-            // {
-            //     id: 9,
-            //     category: 'coldAppetizers',
-            //     price: 180,
-            //     available: false,
-            //     positionLeft: false,
-            //     name: 'Холодное блюдо',
-            //     description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
-            // },
-            // {
-            //     id: 10,
-            //     category: 'coldAppetizers',
-            //     price: 190,
-            //     available: false,
-            //     positionLeft: false,
-            //     name: 'Холодное блюдо',
-            //     description: 'Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .Описание блюда . . .'
-            // },
-        ]
+    FOOD.menuCatalog = function () {
+        // рендер позиций меню
         let htmlLeft = ''
         let htmlRight = ''
-        for (let i = 0; i < catalog.length; i++) {
-            if (catalog[i].positionLeft) {
-                htmlLeft += '<div data-param-id="' + catalog[i].id + '" class="menu-body menu-left">\n' +
+        let filterCatalog = FOOD.catalog.filter(el => el.category == FOOD.activeCategory)
+        for (let i = 0; i < filterCatalog.length; i++) {
+            if (filterCatalog[i].positionLeft) {
+                htmlLeft += '<div data-param-id="' + filterCatalog[i].id + '" class="menu-body menu-left">\n' +
                     '                    <div class="menu-thumbnail">\n' +
                     '                      <img class="img-fluid center-block" src="images/dish/01.png" alt="">\n' +
                     '                    </div>\n' +
                     '                    <div class="menu-details">\n' +
                     '                      <div class="menu-title clearfix">\n' +
-                    '                        <h4>' + catalog[i].name + '</h4>\n' +
-                    '                        <span class="price"> ' + catalog[i].price + ' Р</span>\n' +
+                    '                        <h4>' + filterCatalog[i].name + '</h4>\n' +
+                    '                        <span class="price"> ' + filterCatalog[i].price + ' Р</span>\n' +
                     '                      </div>\n' +
                     '                      <div class="menu-description">\n' +
-                    '                        <p> ' + catalog[i].description + '</p>\n ' +
+                    '                        <p> ' + filterCatalog[i].description + '</p>\n ' +
                     '                      </div>\n' +
                     '                    </div>\n' +
                     '                  </div>'
             } else {
-                htmlRight += '<div data-param-id="' + catalog[i].id + '" class="menu-body menu-left">\n' +
+                htmlRight += '<div data-param-id="' + filterCatalog[i].id + '" class="menu-body menu-left">\n' +
                     '                    <div class="menu-thumbnail">\n' +
                     '                      <img class="img-fluid center-block" src="images/dish/01.png" alt="">\n' +
                     '                    </div>\n' +
                     '                    <div class="menu-details">\n' +
                     '                      <div class="menu-title clearfix">\n' +
-                    '                        <h4>' + catalog[i].name + '</h4>\n' +
-                    '                        <span class="price"> ' + catalog[i].price + ' Р</span>\n' +
+                    '                        <h4>' + filterCatalog[i].name + '</h4>\n' +
+                    '                        <span class="price"> ' + filterCatalog[i].price + ' Р</span>\n' +
                     '                      </div>\n' +
                     '                      <div class="menu-description">\n' +
-                    '                        <p> ' + catalog[i].description + '</p>\n ' +
+                    '                        <p> ' + filterCatalog[i].description + '</p>\n ' +
                     '                      </div>\n' +
                     '                    </div>\n' +
                     '                  </div>'
             }
         }
-        $('#menuCatalogLeft').html(htmlLeft)
-        $('#menuCatalogRight').html(htmlRight)
+        $(`#menu${FOOD.nameActiveCategory}Left`).html(htmlLeft)
+        $(`#menu${FOOD.nameActiveCategory}Right`).html(htmlRight)
 
     }
 
-    POTENZA.handleClickCatalog = function () {
-        $('.menu-body').click((event)=>{
-            console.log(event.target)
+    FOOD.handleClickCatalog = function () {
+        $('.nav-link').click((event) => {
+            $('.tab-pane').removeClass('show')
+            $('.tab-pane').removeClass('active')
+            $('.tab-pane').addClass('fade')
+            let paramId = event.target.getAttribute('id');
+            let name = event.target.getAttribute('data-bs-target');
+            if (paramId !== null) {
+                FOOD.activeCategory = paramId
+                FOOD.nameActiveCategory = name
+                $(`#${FOOD.nameActiveCategory}`).removeClass('fade')
+                $(`#${FOOD.nameActiveCategory}`).addClass('show active')
+                FOOD.menuCatalog()
+            }
+            console.log(FOOD)
         })
     }
 
     /*************************
      Mega menu
      *************************/
-    POTENZA.megaMenu = function () {
+    FOOD.megaMenu = function () {
         $('#menu-1').megaMenu({
             // DESKTOP MODE SETTINGS
             logo_align: 'left',         // align the logo left or right. options (left) or (right)
@@ -263,7 +307,7 @@ NOTE:
     /*************************
      Back to top
      *************************/
-    POTENZA.goToTop = function () {
+    FOOD.goToTop = function () {
         var $goToTop = $('#back-to-top');
         $goToTop.hide();
         $window.scroll(function () {
@@ -279,7 +323,7 @@ NOTE:
     /*************************
      Search
      *************************/
-    POTENZA.searchbar = function () {
+    FOOD.searchbar = function () {
         var $searchbar = $('.overlay-search');
         if ($searchbar.exists()) {
             $('.search-btn,.search-close').on("click", function () {
@@ -292,7 +336,7 @@ NOTE:
     /*************************
      owl-carousel
      *************************/
-    POTENZA.carousel = function () {
+    FOOD.carousel = function () {
         $(".owl-carousel").each(function () {
             var $this = $(this),
                 $items = ($this.data('items')) ? $this.data('items') : 1,
@@ -324,7 +368,7 @@ NOTE:
     /*************************
      Counter
      *************************/
-    POTENZA.counters = function () {
+    FOOD.counters = function () {
         if ($counter.exists()) {
             $counter.each(function () {
                 var $elem = $(this);
@@ -338,7 +382,7 @@ NOTE:
     /*************************
      Isotope
      *************************/
-    POTENZA.Isotope = function () {
+    FOOD.Isotope = function () {
         var $isotope = $(".isotope"),
             $itemElement = '.grid-item',
             $filters = $('.isotope-filters');
@@ -360,7 +404,7 @@ NOTE:
     }
 
     // masonry
-    POTENZA.masonry = function () {
+    FOOD.masonry = function () {
         var $masonry = $('.masonry-main .masonry'),
             $itemElement = '.masonry-main .masonry-item';
         if ($masonry.exists()) {
@@ -377,7 +421,7 @@ NOTE:
     /*************************
      Magnific Popup
      *************************/
-    POTENZA.mediaPopups = function () {
+    FOOD.mediaPopups = function () {
         if ($(".popup-gallery").exists()) {
             $('.popup-gallery').magnificPopup({
                 delegate: 'a.portfolio-img',
@@ -412,7 +456,7 @@ NOTE:
     /*************************
      datetimepicker
      *************************/
-    POTENZA.caldatapicker = function () {
+    FOOD.caldatapicker = function () {
         var $datepicker = $("#datepicker"),
             $timepicker = $("#timepicker");
         if ($datepicker.exists()) {
@@ -428,7 +472,7 @@ NOTE:
     /*************************
      Burgermenu
      *************************/
-    POTENZA.burgermenu = function () {
+    FOOD.burgermenu = function () {
         if ($("#menu-4").exists()) {
             $('#menu-4').megaMenu({
                 menu_position: 'vertical-right',
@@ -446,7 +490,7 @@ NOTE:
     /*************************
      Accordion
      *************************/
-    POTENZA.accordion = function () {
+    FOOD.accordion = function () {
         var $acpanel = $(".accordion .acd-group > .acd-des"),
             $acsnav = $(".accordion .acd-group > .acd-heading");
 
@@ -465,7 +509,7 @@ NOTE:
     /*************************
      Progressbar
      *************************/
-    POTENZA.progressBar = function () {
+    FOOD.progressBar = function () {
 
         if ($progressBar.exists()) {
             $progressBar.each(function (i, elem) {
@@ -498,7 +542,7 @@ NOTE:
     /*************************
      Countdown
      *************************/
-    POTENZA.countdownTimer = function () {
+    FOOD.countdownTimer = function () {
         if ($countdownTimer.exists()) {
             $countdownTimer.downCount({
                 date: '10/05/2022 12:00:00',
@@ -510,7 +554,7 @@ NOTE:
     /*************************
      niceScroll
      *************************/
-    POTENZA.niceScroll = function () {
+    FOOD.niceScroll = function () {
         var $niceScrolldiv = $(".book-content");
         if ($niceScrolldiv.exists()) {
             $(".book-content").niceScroll({
@@ -530,7 +574,7 @@ NOTE:
     /*************************
      PHP contact form
      *************************/
-    POTENZA.contactform = function () {
+    FOOD.contactform = function () {
         var $contactform = $("#contactform");
 
         $contactform.submit(function (event) {
@@ -553,29 +597,29 @@ NOTE:
 
 //Window load functions
     window.onload = function () {
-        POTENZA.goToTop(),
-            POTENZA.menuRender(),
-            POTENZA.menuCatalog(),
-            POTENZA.handleClickCatalog(),
-            POTENZA.preloader(),
-            POTENZA.Isotope(),
-            POTENZA.masonry(),
-            POTENZA.caldatapicker(),
-            POTENZA.progressBar();
+        FOOD.goToTop(),
+            FOOD.menuRender(),
+            FOOD.menuCatalog(),
+            // FOOD.handleClickCatalog(),
+            FOOD.preloader(),
+            FOOD.Isotope(),
+            FOOD.masonry(),
+            FOOD.caldatapicker(),
+            FOOD.progressBar();
     }
 
     //Document ready functions
     $document.ready(function () {
-        POTENZA.searchbar(),
-            POTENZA.megaMenu(),
-            POTENZA.counters(),
-            POTENZA.mediaPopups(),
-            POTENZA.carousel(),
-            POTENZA.burgermenu(),
-            POTENZA.accordion(),
-            POTENZA.countdownTimer(),
-            POTENZA.contactform(),
-            POTENZA.niceScroll();
+        FOOD.searchbar(),
+            FOOD.megaMenu(),
+            FOOD.counters(),
+            FOOD.mediaPopups(),
+            FOOD.carousel(),
+            FOOD.burgermenu(),
+            FOOD.accordion(),
+            FOOD.countdownTimer(),
+            FOOD.contactform(),
+            FOOD.niceScroll();
     });
 })(jQuery);
 
@@ -583,12 +627,12 @@ NOTE:
 $(document).ready(function () {
     console.log('hello')
     // $.ajax({
-    //   url: 'https://themes.potenzaglobalsolutions.com/top-bar-section.php',
+    //   url: '',
     //   type: 'post',
     //   //dataType: 'json',
-    //   data:'action=pgs_top_bar&theme=the-zayka',
+    //   data:'',
     //   success: function(response){
-    //     $('body').prepend(response);
+    //console.log(response)
     //   },
     //
     // });
