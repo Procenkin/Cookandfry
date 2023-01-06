@@ -1398,6 +1398,8 @@ blockquote cite { font-size: 14px; margin-top: 15px; display: block; font-weight
 .social-ico a:hover { color: #e93e21; }
 
 .orderCount {
+    margin: 15px 0px;
+    padding: 0 30px;
     color: #fff;
 }
 /*hack code ie 9*/

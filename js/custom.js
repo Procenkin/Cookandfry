@@ -35,15 +35,12 @@
             activeCategory: 1,
             nameActiveCategory: 'coldSnacks',
             menu: [
-                {id: 1, description: 'Холодные закуски', name: 'coldSnacks', target: 'coldSnacks', active: true},
-                {id: 2, description: 'Салаты', name: 'salads', target: 'salads', active: false},
+                {id: 1, description: 'Поздние завтраки', name: 'coldSnacks', target: 'coldSnacks', active: true},
+                {id: 2, description: 'Холодные закуски', name: 'salads', target: 'salads', active: false},
                 {id: 3, description: 'Супы', name: 'soups', target: 'soups', active: false},
-                {id: 4, description: 'Горячие блюда', name: 'hotDishes', target: 'hotDishes', active: false},
-                {id: 5, description: 'Фирменное', name: 'branded', target: 'branded', active: false},
-                {id: 6, description: 'Соусы', name: 'sauces', target: 'sauces', active: false},
-                {id: 7, description: 'Десерты', name: 'dessert', target: 'dessert', active: false},
-                {id: 8, description: 'Выпечка', name: 'bakery', target: 'bakery', active: false},
-                {id: 9, description: 'Напитки', name: 'drinks', target: 'drinks', active: false},
+                {id: 4, description: 'Паста', name: 'hotDishes', target: 'hotDishes', active: false},
+                {id: 5, description: 'Горячее', name: 'branded', target: 'branded', active: false},
+                {id: 6, description: 'Десерты', name: 'dessert', target: 'dessert', active: false},
             ],
             catalog: [
                 {
@@ -216,6 +213,7 @@
                     <p>${dish.description}</p>
                     <p>Цена: ${dish.price} Р</p>
                     `)
+            $('.btn-close-modal-buy').off("click")
             $('.btn-close-modal-buy').click((e) => {
                 FOOD.changeOrder(id)
             })
@@ -225,9 +223,28 @@
     FOOD.changeOrder = function (id) {
         let dish = FOOD.getDish(id)
         ORDER.dishes.push(dish)
-        ORDER.summ = ORDER.summ + dish.price
-        $('.orderCount').html(`Корзина | ${ORDER.dishes.length}`)
+        FOOD.updateOrder()
+        $('.btn-modal-order').html(`Корзина | ${ORDER.dishes.length}`)
         FOOD.modalOrder()
+    }
+
+    FOOD.initEvents = function () {
+        $('.btn-close-modal-order').click((e) => {
+            $('.modal-order').hide()
+        })
+
+        $('.btn-modal-order').click((e) => {
+            console.log('Корзина')
+            $('#modal-order').show()
+        })
+    }
+
+    FOOD.updateOrder = function () {
+        ORDER.summ = 0;
+        ORDER.dishes.forEach((item) => {
+            ORDER.summ = item.price + ORDER.summ
+        })
+        ORDER.createOrder = new Date()
     }
 
     FOOD.modalOrder = function () {
@@ -661,8 +678,9 @@
         FOOD.goToTop(),
             FOOD.menuRender(),
             FOOD.menuCatalog(),
-            FOOD.handInfoDish()
-        FOOD.preloader(),
+            FOOD.handInfoDish(),
+            FOOD.initEvents(),
+            FOOD.preloader(),
             FOOD.Isotope(),
             FOOD.masonry(),
             FOOD.caldatapicker(),
