@@ -740,50 +740,85 @@
                     `)
             $('.btn-close-modal-buy').off("click")
             $('.btn-close-modal-buy').click((e) => {
-                FOOD.changeOrder(id)
+                FOOD.addToOrder(id)
             })
         })
         $('.btn-modal-zone').click((e) => {
             let str = `
             <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A29e88dcf336d9dda5560d2f84add24314eaa7480096c9471ae6b15deba940538&amp;source=constructor"
-                        width="${window.innerWidth - window.innerWidth*0.05}" height="${window.innerHeight - window.innerHeight*0.05}" frameborder="0"></iframe>
+                        width="${window.innerWidth - window.innerWidth * 0.05}" height="${window.innerHeight - window.innerHeight * 0.05}" frameborder="0"></iframe>
             `
             $('.modal-body-modal-zone').html(str)
             $('#modal-zone').show()
 
         })
-        $('.btn-close-modal-zone').click(()=>{
+        $('.btn-close-modal-zone').click(() => {
             $('#modal-zone').hide()
         })
 
 
     }
-
-    FOOD.changeOrder = function (id) {
+    FOOD.removeFromOrder = function (id) {
         let dish = FOOD.getDish(id)
-        ORDER.dishes.push(dish)
+        if (ORDER.dishes.find(x => x.id == id) !== undefined) {
+            if (dish['count'] == 1) {
+                let indx = ORDER.dishes.findIndex(x => x.id == id)
+                ORDER.dishes.splice(indx)
+            } else {
+                dish['count'] = dish['count'] - 1
+            }
+        }
         FOOD.updateOrder()
-        $('.btn-modal-order').html(`Корзина | ${ORDER.dishes.length}`)
-        FOOD.modalOrder()
+    }
+
+    FOOD.addToOrder = function (id) {
+        let dish = FOOD.getDish(id)
+        if (ORDER.dishes.find(x => x.id == id) !== undefined) {
+            dish['count'] ? dish['count'] = dish['count'] + 1 : dish['count'] = 1
+        } else {
+            dish['count'] = 1
+            ORDER.dishes.push(dish)
+        }
+        FOOD.updateOrder()
+        let countDishes = 0;
+        ORDER.dishes.forEach((item) => {
+            countDishes += item.count
+        })
+        $('.btn-modal-order').html(`Корзина | ${countDishes}`)
+        // FOOD.modalOrder()
     }
 
     FOOD.initEvents = function () {
         $('.btn-close-modal-order').click((e) => {
-            $('.modal-order').hide()
+            $('#modal-order').hide()
         })
 
         $('.btn-modal-order').click((e) => {
             console.log('Корзина')
             $('#modal-order').show()
+            console.log(ORDER.dishes)
+            let str = '<div class="modal-order-list">'
+            ORDER.dishes.forEach((item) => {
+                str += '<div class="modal-order-list-row">'
+                    + '<div class="modal-order-list-product"> ' + item.name + ' </div>'
+                    + '<div class="modal-order-list-price"> ' + item.price + ' руб.</div>'
+                    + '<div class="modal-order-list-price"> <button onclick="removeFromOrder(' + item.id + ')">-</button> </div>'
+                    + '<div class="modal-order-list-price">' + item.count + '</div>'
+                    + '<div class="modal-order-list-price"> <button onclick="addToOrder(' + item.id + ')">+</button> </div>'
+                    + '</div>'
+            })
+            str += '</div>'
+            $('.modal-body-modal-order').html(str)
         })
     }
 
     FOOD.updateOrder = function () {
         ORDER.summ = 0;
         ORDER.dishes.forEach((item) => {
-            ORDER.summ = item.price + ORDER.summ
+            ORDER.summ = (item.price * item.count) + ORDER.summ
         })
         ORDER.createOrder = new Date()
+        console.log(ORDER)
     }
 
     FOOD.modalOrder = function () {
