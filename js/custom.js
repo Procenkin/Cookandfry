@@ -80,7 +80,7 @@
                     category: 1,
                     price: 299,
                     available: true,
-                    positionLeft: true,
+                    positionLeft: 0,
                     name: 'Блины с жульеном из курицы и грибов',
                     description: 'Изысканное блюдо для гурманов 180гр.'
                 },
@@ -275,7 +275,7 @@
                     category: 2,
                     price: 509,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Тар-тар из говядины',
                     description: 'Классический тар-тар из говядины с каперсами 122гр.'
                 },
@@ -341,7 +341,7 @@
                     category: 5,
                     price: 169,
                     available: true,
-                    positionLeft: true,
+                    positionLeft: 0,
                     name: 'Крем-суп из брокколи ',
                     description: 'Легкий крем-суп 300гр.'
                 }, {
@@ -349,7 +349,7 @@
                     category: 5,
                     price: 229,
                     available: true,
-                    positionLeft: true,
+                    positionLeft: 0,
                     name: 'Борщ с чесноком и сметаной',
                     description: 'Король всех и вся...подается с каплей чесночного масла и сметаной 300гр.'
                 }, {
@@ -397,7 +397,7 @@
                     category: 6,
                     price: 539,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Цыпленок Табака ',
                     description: 'Все в лучших традициях этого блюда 300гр.'
                 }, {
@@ -429,7 +429,7 @@
                     category: 6,
                     price: 559,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Стейк из лосося с сливочно-лимонным соусом',
                     description: 'Сочный стейк с лимонно-сливочным соусом 150гр.'
                 },
@@ -438,7 +438,7 @@
                     category: 6,
                     price: 269,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Горбуша под маринадом',
                     description: 'Известная с детства рыба из СССР  170гр.'
                 },
@@ -465,7 +465,7 @@
                     category: 7,
                     price: 100,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Гречка',
                     description: 'Отварная 150гр.'
                 },
@@ -474,7 +474,7 @@
                     category: 7,
                     price: 100,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Рис',
                     description: 'Отварной 150гр.'
                 },
@@ -492,7 +492,7 @@
                     category: 8,
                     price: 269,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Тирамису',
                     description: 'Классический яичный десерт с печеньем и эспрессо  120гр.'
                 },
@@ -501,7 +501,7 @@
                     category: 8,
                     price: 229,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Шоколадный фондан',
                     description: 'Наслаждение для сладкоежек 70гр.'
                 },
@@ -528,7 +528,7 @@
                     category: 10,
                     price: 329,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Апельсиновый фреш',
                     description: '300мл.'
                 },
@@ -537,7 +537,7 @@
                     category: 10,
                     price: 369,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Грейпфрутовый фреш ',
                     description: '300мл.'
                 },
@@ -546,7 +546,7 @@
                     category: 10,
                     price: 249,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Яблочный фреш ',
                     description: '300мл.'
                 },
@@ -555,7 +555,7 @@
                     category: 10,
                     price: 169,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Морковный фреш',
                     description: '300мл'
                 },
@@ -582,7 +582,7 @@
                     category: 9,
                     price: 239,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Молочный коктейль ванильный',
                     description: '250мл.'
                 },
@@ -591,7 +591,7 @@
                     category: 9,
                     price: 239,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Молочный коктейль шоколадный',
                     description: '250мл.'
                 },
@@ -636,7 +636,7 @@
                     category: 11,
                     price: 30,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Гренки из белого хлеба',
                     description: '10гр.'
                 },
@@ -645,7 +645,7 @@
                     category: 11,
                     price: 119,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Масло оливковое',
                     description: '20мл.'
                 },
@@ -654,7 +654,7 @@
                     category: 11,
                     price: 109,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Огурцы маринованные',
                     description: '50гр.'
                 },
@@ -663,7 +663,7 @@
                     category: 11,
                     price: 119,
                     available: true,
-                    positionLeft: 0,
+                    positionLeft: 1,
                     name: 'Пармезан',
                     description: '30гр.'
                 },
@@ -675,15 +675,6 @@
                     positionLeft: 0,
                     name: 'Соус-крем Бальзамик',
                     description: '20гр.'
-                },
-                {
-                    id: 740,
-                    category: 11,
-                    price: 69,
-                    available: true,
-                    positionLeft: 0,
-                    name: '',
-                    description: ''
                 },
                 {
                     id: 750,
