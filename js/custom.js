@@ -743,6 +743,20 @@
                 FOOD.changeOrder(id)
             })
         })
+        $('.btn-modal-zone').click((e) => {
+            let str = `
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A29e88dcf336d9dda5560d2f84add24314eaa7480096c9471ae6b15deba940538&amp;source=constructor"
+                        width="${window.innerWidth - window.innerWidth*0.05}" height="${window.innerHeight - window.innerHeight*0.05}" frameborder="0"></iframe>
+            `
+            $('.modal-body-modal-zone').html(str)
+            $('#modal-zone').show()
+
+        })
+        $('.btn-close-modal-zone').click(()=>{
+            $('#modal-zone').hide()
+        })
+
+
     }
 
     FOOD.changeOrder = function (id) {
@@ -1232,13 +1246,3 @@
 $(document).on('click', 'a.frame-close', function (e) {
     $('.header-preview').slideUp();
 });
-
-// var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-// (function(){
-// var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-// s1.async=true;
-// s1.src='https://embed.tawk.to/5efaefc99e5f694422918fd2/default';
-// s1.charset='UTF-8';
-// s1.setAttribute('crossorigin','*');
-// s0.parentNode.insertBefore(s1,s0);
-// })();
