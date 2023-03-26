@@ -814,6 +814,7 @@
         // рендер позиций меню
         let htmlLeft = ''
         let htmlRight = ''
+        let imgSrc = ''
         let filterCatalog = FOOD.catalog.filter(el => el.category == FOOD.activeCategory)
         for (let i = 0; i < filterCatalog.length; i++) {
             if (filterCatalog[i].positionLeft) {
