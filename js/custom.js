@@ -26,7 +26,6 @@
 ======================================*/
 
 (function ($) {
-    "use strict";
 
     /*************************
      Predefined Variables
@@ -784,7 +783,7 @@
         ORDER.dishes.forEach((item) => {
             countDishes += item.count
         })
-        $('.btn-modal-order').html(`Корзина | ${countDishes}`)
+        FOOD.renderBtnOrder()
         // FOOD.modalOrder()
     }
 
@@ -796,20 +795,115 @@
         $('.btn-modal-order').click((e) => {
             console.log('Корзина')
             $('#modal-order').show()
-            console.log(ORDER.dishes)
-            let str = '<div class="modal-order-list">'
-            ORDER.dishes.forEach((item) => {
-                str += '<div class="modal-order-list-row">'
-                    + '<div class="modal-order-list-product"> ' + item.name + ' </div>'
-                    + '<div class="modal-order-list-price"> ' + item.price + ' руб.</div>'
-                    + '<div class="modal-order-list-price"> <button onclick="removeFromOrder(' + item.id + ')">-</button> </div>'
-                    + '<div class="modal-order-list-price">' + item.count + '</div>'
-                    + '<div class="modal-order-list-price"> <button onclick="addToOrder(' + item.id + ')">+</button> </div>'
-                    + '</div>'
-            })
-            str += '</div>'
-            $('.modal-body-modal-order').html(str)
+            FOOD.renderModalOrder()
         })
+    }
+
+    FOOD.renderModalOrder = function () {
+        let str = '<div class="modal-order-list">'
+        ORDER.dishes.forEach((item) => {
+            str += '<div class="modal-order-list-row">'
+                + '<div class="modal-order-list-product"> ' + item.name + ' </div>'
+                + '<div class="modal-order-list-price"> ' + item.price * item.count + ' руб.</div>'
+                + '<div class="modal-order-list-price"> <button class="decr btn-primary btn-set-count" prop-id="' + item.id + '">-</button> </div>'
+                + '<div class="modal-order-list-price">' + item.count + '</div>'
+                + '<div class="modal-order-list-price"> <button class="incr btn-primary btn-set-count" prop-id="' + item.id + '">+</button> </div>'
+                + '</div>'
+        })
+        str += '</div>'
+        str += '<div>Итого: ' + ORDER.summ + ' Р</div>'
+        $('.modal-body-modal-order').html(str)
+        let id = null
+        $('.incr').click((event) => {
+            id = event.target.getAttribute('prop-id')
+            FOOD.updateOrderDishes(id, 1)
+        })
+        $('.decr').click((event) => {
+            id = event.target.getAttribute('prop-id')
+            FOOD.updateOrderDishes(id, -1)
+        })
+
+        $('.btn-order-submit').click(() => {
+            FOOD.orderSubmit()
+        })
+    }
+
+    FOOD.orderSubmit = function () {
+        let message = {
+            'Номер заказа':'-',
+            'Время создания заказа': new Date(),
+            'Позиции': [],
+            'Стоимость заказа': ORDER.summ + ' Р',
+            'Телефон': '-',
+            'Адрес': '-'
+        }
+
+        ORDER.dishes.forEach((item) => {
+            message['Позиции'].push({
+                'Название': item.name,
+                'Количество': item.count,
+                'ИД': item.id,
+                'Цена': item.price + ' Р',
+            })
+        })
+        fetch('https://formspree.io/f/xvonberk', {
+            method: 'POST',
+            body: JSON.stringify(message),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                $('.modal-order').hide()
+                ORDER = {
+                    id: null,
+                    createOrder: null,
+                    dishes: [],
+                    customer: {
+                        fierstName: null,
+                        lastName: null,
+                        adress: {
+                            country: 'Russia',
+                            street: null,
+                            floor: null,
+                            description: null
+                        }
+                    },
+                    summ: 0
+                }
+                FOOD.updateOrder()
+                console.log(response)
+            } else {
+                response.json().then(data => {
+                    console.log(data)
+                })
+            }
+        }).catch(error => {
+            console.log(error)
+        });
+    }
+
+    FOOD.updateOrderDishes = function (id, countFix) {
+        ORDER.dishes.map((item) => {
+            if (item.id == id) {
+                item.count += countFix
+                if (item.count < 0) item.count = 0
+            }
+            return item
+        })
+
+        FOOD.updateOrder()
+        FOOD.renderModalOrder()
+        FOOD.renderBtnOrder()
+    }
+
+    FOOD.renderBtnOrder = function () {
+        if (ORDER.summ !== 0) {
+            $('.btn-modal-order').show()
+            $('.btn-modal-order').html(`Корзина | ${ORDER.summ} Р`)
+        } else {
+            $('.btn-modal-order').hide()
+        }
     }
 
     FOOD.updateOrder = function () {

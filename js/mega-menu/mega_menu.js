@@ -102,28 +102,28 @@
                     // check if the collapse true
                     if (settings.mobile_settings.collapse === true) {
                         // append the mobile collapse trigger button
-                        menu_logo_li.append('<div class="menu-mobile-collapse-trigger">' +
-                            '<span></span>' +
-                            '</div>');
-                        // hide the menu links, menu social bar
-                        var drop_down = menu_links.add(menu_socialBar);
-                        drop_down.hide(0);
-                        // apply css
-                        menu_searchBar.addClass(activeClass);
-                        // add the click trigger
-                        $this.find(mobile_trigger_button).on('click', function () {
-                            // check if the menu links and menu social bar hide
-                            if (drop_down.is(':hidden')) {
-                                // show the drop down
-                                $(this).addClass(activeClass);
-                                drop_down.show(0);
-                            } else {
-                                // hide the drop down
-                                $(this).removeClass(activeClass);
-                                drop_down.hide(0);
-                            }
-                            return false;
-                        });
+                        // menu_logo_li.append('<div class="menu-mobile-collapse-trigger">' +
+                        //     '<span></span>' +
+                        //     '</div>');
+                        // // hide the menu links, menu social bar
+                        // var drop_down = menu_links.add(menu_socialBar);
+                        // drop_down.hide(0);
+                        // // apply css
+                        // menu_searchBar.addClass(activeClass);
+                        // // add the click trigger
+                        // $this.find(mobile_trigger_button).on('click', function () {
+                        //     // check if the menu links and menu social bar hide
+                        //     if (drop_down.is(':hidden')) {
+                        //         // show the drop down
+                        //         $(this).addClass(activeClass);
+                        //         drop_down.show(0);
+                        //     } else {
+                        //         // hide the drop down
+                        //         $(this).removeClass(activeClass);
+                        //         drop_down.hide(0);
+                        //     }
+                        //     return false;
+                        // });
                     }
                 },
                 // switch effects
