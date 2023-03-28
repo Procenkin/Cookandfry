@@ -821,7 +821,6 @@
                 $('#address_client').css("border", '1px solid #000')
                 ORDER.customer.adress = suggestion.value;
                 ORDER.customer['unrestricted_value'] = suggestion.unrestricted_value;
-                console.log(suggestion)
             }
         });
         let id = null
@@ -892,6 +891,7 @@
                     summ: 0
                 }
                 FOOD.updateOrder()
+                FOOD.renderBtnOrder()
                 console.log(response)
             } else {
                 response.json().then(data => {
