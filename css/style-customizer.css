@@ -230,6 +230,14 @@ div.style-customizer .skin-dark-green {
     flex-direction: row-reverse;
 }
 
+.modal-order-list-price input {
+    margin: 8px 0;
+}
+.modal-order-list-count {
+    display: flex;
+    flex-direction: row;
+}
+
 .modal-order-position-list {
     display: flex;
     flex-direction: column;
@@ -240,6 +248,7 @@ div.style-customizer .skin-dark-green {
     flex-direction: row;
     margin: 0 5px;
     flex: 1 1 auto;
+    justify-content: space-between;
 }
 
 .modal-order-position-product {

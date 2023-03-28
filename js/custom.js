@@ -693,12 +693,7 @@
             customer: {
                 fierstName: null,
                 lastName: null,
-                adress: {
-                    country: 'Russia',
-                    street: null,
-                    floor: null,
-                    description: null
-                }
+                adress: null
             },
             summ: 0
         },
@@ -801,18 +796,34 @@
 
     FOOD.renderModalOrder = function () {
         let str = '<div class="modal-order-list">'
+            + '<div><b>Адрес:</b> <input id="address_client" style="border: 1px solid #000" /></div>'
+            + '<div><b>Номер телефона:</b> <input id="phone_client" style="border: 1px solid #000" /></div>'
         ORDER.dishes.forEach((item) => {
             str += '<div class="modal-order-list-row">'
                 + '<div class="modal-order-list-product"> ' + item.name + ' </div>'
                 + '<div class="modal-order-list-price"> ' + item.price * item.count + ' руб.</div>'
-                + '<div class="modal-order-list-price"> <button class="decr btn-primary btn-set-count" prop-id="' + item.id + '">-</button> </div>'
-                + '<div class="modal-order-list-price">' + item.count + '</div>'
-                + '<div class="modal-order-list-price"> <button class="incr btn-primary btn-set-count" prop-id="' + item.id + '">+</button> </div>'
+                + '<div class="modal-order-list-count">'
+                    + '<div class="modal-order-list-price"> <button class="decr btn-primary btn-set-count" prop-id="' + item.id + '">-</button> </div>'
+                    + '<div class="modal-order-list-price">' + item.count + '</div>'
+                    + '<div class="modal-order-list-price"> <button class="incr btn-primary btn-set-count" prop-id="' + item.id + '">+</button> </div>'
+                + '</div>'
+
                 + '</div>'
         })
         str += '</div>'
-        str += '<div>Итого: ' + ORDER.summ + ' Р</div>'
+        str += '<div><b>Итого:</b> ' + ORDER.summ + ' Р</div>'
         $('.modal-body-modal-order').html(str)
+        $("#address_client").suggestions({
+            token: "5a40e0b55bc59eb7238208f41d2bfd8350b359f7",
+            type: "ADDRESS",
+            value: ORDER.customer.unrestricted_value,
+            onSelect: function (suggestion) {
+                $('#address_client').css("border", '1px solid #000')
+                ORDER.customer.adress = suggestion.value;
+                ORDER.customer['unrestricted_value'] = suggestion.unrestricted_value;
+                console.log(suggestion)
+            }
+        });
         let id = null
         $('.incr').click((event) => {
             id = event.target.getAttribute('prop-id')
@@ -829,13 +840,22 @@
     }
 
     FOOD.orderSubmit = function () {
+        if (ORDER.customer.adress === null) {
+            $('#address_client').css("border", '1px solid red')
+            return
+        }
+        let phone = $('#phone_client').val()
+        if (!phone) {
+            $('#phone_client').css("border", '1px solid red')
+            return
+        }
         let message = {
-            'Номер заказа':'-',
+            'Номер заказа': '-',
             'Время создания заказа': new Date(),
             'Позиции': [],
             'Стоимость заказа': ORDER.summ + ' Р',
-            'Телефон': '-',
-            'Адрес': '-'
+            'Телефон': phone,
+            'Адрес': ORDER.customer.adress
         }
 
         ORDER.dishes.forEach((item) => {
@@ -854,7 +874,7 @@
             }
         }).then(response => {
             if (response.ok) {
-                $('.modal-order').hide()
+                $('#modal-order').hide()
                 ORDER = {
                     id: null,
                     createOrder: null,
