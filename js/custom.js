@@ -662,7 +662,7 @@
                     category: 11,
                     price: 119,
                     available: true,
-                    positionLeft: 1,
+                    positionLeft: 0,
                     name: 'Пармезан',
                     description: '30гр.'
                 },
@@ -676,7 +676,7 @@
                     description: '20гр.'
                 },
                 {
-                    id: 750,
+                    id: 740,
                     category: 11,
                     price: 25,
                     available: true,
@@ -717,21 +717,44 @@
         $('#loading').delay(0).fadeOut('slow');
     };
 
+    FOOD.onloadImage = function (src) {
+        let img = document.createElement('img');
+        img.src = src
+        img.style.width = '100%'
+        img.onload = function () {
+            $('.modal-body-modal-food').prepend(img)
+            $('#loading').hide()
+            $('#modal-food').show()
+        };
+
+        img.onerror = function () {
+            $('#loading').hide()
+            $('#modal-food').show()
+        };
+    }
+
     FOOD.handInfoDish = function () {
         $('.btn-close-modal-food').click(() => {
             $('#modal-food').hide()
         })
 
-        $('.menu-title-js').click((e) => {
-            $('#modal-food').show()
+        $('.hand-open-dishes').click((e) => {
+            $('#loading').show()
+
             let id = e.currentTarget.getAttribute('data-param-id');
             let dish = FOOD.getDish(id)
             $('#modal-food').attr('data-param-id', id)
             $('.modal-title-modal-food').html(dish.name)
-            $('.modal-body-modal-food').html(`
+            $('.modal-body-modal-food').html(`                    
+                    
                     <p>${dish.description}</p>
                     <p>Цена: ${dish.price} Р</p>
                     `)
+            FOOD.onloadImage(`images/dish/low2/${id}-min.jpg`)
+            // $('#imgModal').ready(function(){
+            //     $('#loading').hide()
+            //     $('#modal-food').show()
+            // })
             $('.btn-close-modal-buy').off("click")
             $('.btn-close-modal-buy').click((e) => {
                 FOOD.addToOrder(id)
@@ -792,6 +815,10 @@
             $('#modal-order').show()
             FOOD.renderModalOrder()
         })
+
+        $('#modal-food').click(()=>{
+            // $('#modal-food').hide()
+        })
     }
 
     FOOD.renderModalOrder = function () {
@@ -803,9 +830,9 @@
                 + '<div class="modal-order-list-product"> ' + item.name + ' </div>'
                 + '<div class="modal-order-list-price"> ' + item.price * item.count + ' руб.</div>'
                 + '<div class="modal-order-list-count">'
-                    + '<div class="modal-order-list-price"> <button class="decr btn-primary btn-set-count" prop-id="' + item.id + '">-</button> </div>'
-                    + '<div class="modal-order-list-price">' + item.count + '</div>'
-                    + '<div class="modal-order-list-price"> <button class="incr btn-primary btn-set-count" prop-id="' + item.id + '">+</button> </div>'
+                + '<div class="modal-order-list-price"> <button class="decr btn-primary btn-set-count" prop-id="' + item.id + '">-</button> </div>'
+                + '<div class="modal-order-list-price">' + item.count + '</div>'
+                + '<div class="modal-order-list-price"> <button class="incr btn-primary btn-set-count" prop-id="' + item.id + '">+</button> </div>'
                 + '</div>'
 
                 + '</div>'
@@ -980,13 +1007,14 @@
         let imgSrc = ''
         let filterCatalog = FOOD.catalog.filter(el => el.category == FOOD.activeCategory)
         for (let i = 0; i < filterCatalog.length; i++) {
+            imgSrc = 'images/dish/low/' + filterCatalog[i].id + '.jpg'
             if (filterCatalog[i].positionLeft) {
                 htmlLeft += '<div data-param-id="' + filterCatalog[i].id + '" class="menu-body menu-left">\n' +
                     '                    <div class="menu-thumbnail">\n' +
-                    '                      <img class="img-fluid center-block" src="images/photomenu/'+filterCatalog[i].id+'.jpg" alt="">\n' +
+                    '                      <img data-param-id="' + filterCatalog[i].id + '" class="img-fluid center-block hand-open-dishes" src="' + imgSrc + '" alt="">\n' +
                     '                    </div>\n' +
                     '                    <div class="menu-details">\n' +
-                    '                      <div data-param-id="' + filterCatalog[i].id + '" class="menu-title-js menu-title clearfix">\n' +
+                    '                      <div data-param-id="' + filterCatalog[i].id + '" class="menu-title-js menu-title clearfix hand-open-dishes">\n' +
                     '                        <h4>' + filterCatalog[i].name + '</h4>\n' +
                     '                        <span class="price"> ' + filterCatalog[i].price + ' Р</span>\n' +
                     '                      </div>\n' +
@@ -998,10 +1026,10 @@
             } else {
                 htmlRight += '<div data-param-id="' + filterCatalog[i].id + '" class="menu-body menu-left">\n' +
                     '                    <div class="menu-thumbnail">\n' +
-                    '                      <img class="img-fluid center-block" src="images/photomenu/'+filterCatalog[i].id+'.jpg" alt="">\n' +
+                    '                      <img data-param-id="' + filterCatalog[i].id + '" class="img-fluid center-block hand-open-dishes" src="' + imgSrc + '" alt="">\n' +
                     '                    </div>\n' +
                     '                    <div class="menu-details">\n' +
-                    '                      <div data-param-id="' + filterCatalog[i].id + '" class="menu-title-js menu-title clearfix">\n' +
+                    '                      <div data-param-id="' + filterCatalog[i].id + '" class="menu-title-js menu-title clearfix hand-open-dishes">\n' +
                     '                        <h4>' + filterCatalog[i].name + '</h4>\n' +
                     '                        <span class="price"> ' + filterCatalog[i].price + ' Р</span>\n' +
                     '                      </div>\n' +
