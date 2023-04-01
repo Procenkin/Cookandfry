@@ -983,7 +983,7 @@
             if (filterCatalog[i].positionLeft) {
                 htmlLeft += '<div data-param-id="' + filterCatalog[i].id + '" class="menu-body menu-left">\n' +
                     '                    <div class="menu-thumbnail">\n' +
-                    '                      <img class="img-fluid center-block" src="images/dish/01.png" alt="">\n' +
+                    '                      <img class="img-fluid center-block" src="images/photomenu/'+filterCatalog[i].id+'.jpg" alt="">\n' +
                     '                    </div>\n' +
                     '                    <div class="menu-details">\n' +
                     '                      <div data-param-id="' + filterCatalog[i].id + '" class="menu-title-js menu-title clearfix">\n' +
@@ -998,7 +998,7 @@
             } else {
                 htmlRight += '<div data-param-id="' + filterCatalog[i].id + '" class="menu-body menu-left">\n' +
                     '                    <div class="menu-thumbnail">\n' +
-                    '                      <img class="img-fluid center-block" src="images/dish/01.png" alt="">\n' +
+                    '                      <img class="img-fluid center-block" src="images/photomenu/'+filterCatalog[i].id+'.jpg" alt="">\n' +
                     '                    </div>\n' +
                     '                    <div class="menu-details">\n' +
                     '                      <div data-param-id="' + filterCatalog[i].id + '" class="menu-title-js menu-title clearfix">\n' +
