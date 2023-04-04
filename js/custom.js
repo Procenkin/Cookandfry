@@ -944,6 +944,25 @@
                 //     'Цена': item.price + ' Р',
                 // })
             })
+            $('#modal-order').hide()
+            ORDER = {
+                id: null,
+                createOrder: null,
+                dishes: [],
+                customer: {
+                    fierstName: null,
+                    lastName: null,
+                    adress: {
+                        country: 'Russia',
+                        street: null,
+                        floor: null,
+                        description: null
+                    }
+                },
+                summ: 0
+            }
+            FOOD.updateOrder()
+            FOOD.renderBtnOrder()
             window.open("https://api.whatsapp.com/send?phone=79779310006&message=" + msg, '_blank')
         }
     }
