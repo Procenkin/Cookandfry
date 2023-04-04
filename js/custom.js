@@ -934,9 +934,9 @@
                 console.log(error)
             });
         } else {
-            let msg = ''
+            let msg = 'Мой заказ:'
             ORDER.dishes.forEach((item, i) => {
-                msg += i + '.' + ' ' + item.name + ' ' + item.count + 'шт.; '
+                msg += i + 1 + '.' + ' ' + item.name + ' ' + item.count + 'шт.; '
                 // message['Позиции'].push({
                 //     'Название': item.name,
                 //     'Количество': item.count,
