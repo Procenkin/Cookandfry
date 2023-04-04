@@ -963,7 +963,7 @@
             }
             FOOD.updateOrder()
             FOOD.renderBtnOrder()
-            window.open("https://api.whatsapp.com/send?phone=79779310006&message=" + msg, '_blank')
+            window.open("https://api.whatsapp.com/send?phone=79779310006&text=" + msg, '_blank')
         }
     }
 
