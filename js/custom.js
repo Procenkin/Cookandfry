@@ -816,7 +816,7 @@
             FOOD.renderModalOrder()
         })
 
-        $('#modal-food').click(()=>{
+        $('#modal-food').click(() => {
             // $('#modal-food').hide()
         })
     }
@@ -863,9 +863,13 @@
         $('.btn-order-submit').click(() => {
             FOOD.orderSubmit()
         })
+
+        $('.btn-order-submit-whatsApp').click(() => {
+            FOOD.orderSubmit('whatsApp')
+        })
     }
 
-    FOOD.orderSubmit = function () {
+    FOOD.orderSubmit = function (who) {
         if (ORDER.customer.adress === null) {
             $('#address_client').css("border", '1px solid red')
             return
@@ -892,42 +896,56 @@
                 'Цена': item.price + ' Р',
             })
         })
-        fetch('https://formspree.io/f/xvonberk', {
-            method: 'POST',
-            body: JSON.stringify(message),
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                $('#modal-order').hide()
-                ORDER = {
-                    id: null,
-                    createOrder: null,
-                    dishes: [],
-                    customer: {
-                        fierstName: null,
-                        lastName: null,
-                        adress: {
-                            country: 'Russia',
-                            street: null,
-                            floor: null,
-                            description: null
-                        }
-                    },
-                    summ: 0
+        if (who !== 'whatsApp') {
+            fetch('https://formspree.io/f/xvonberk', {
+                method: 'POST',
+                body: JSON.stringify(message),
+                headers: {
+                    'Accept': 'application/json'
                 }
-                FOOD.updateOrder()
-                FOOD.renderBtnOrder()
-                console.log(response)
-            } else {
-                response.json().then(data => {
-                    console.log(data)
-                })
-            }
-        }).catch(error => {
-            console.log(error)
-        });
+            }).then(response => {
+                if (response.ok) {
+                    $('#modal-order').hide()
+                    ORDER = {
+                        id: null,
+                        createOrder: null,
+                        dishes: [],
+                        customer: {
+                            fierstName: null,
+                            lastName: null,
+                            adress: {
+                                country: 'Russia',
+                                street: null,
+                                floor: null,
+                                description: null
+                            }
+                        },
+                        summ: 0
+                    }
+                    FOOD.updateOrder()
+                    FOOD.renderBtnOrder()
+                    console.log(response)
+                } else {
+                    response.json().then(data => {
+                        console.log(data)
+                    })
+                }
+            }).catch(error => {
+                console.log(error)
+            });
+        } else {
+            let msg = ''
+            ORDER.dishes.forEach((item, i) => {
+                msg += i + '.' + ' ' + item.name + ' ' + item.count + 'шт.; '
+                // message['Позиции'].push({
+                //     'Название': item.name,
+                //     'Количество': item.count,
+                //     'ИД': item.id,
+                //     'Цена': item.price + ' Р',
+                // })
+            })
+            window.open("https://api.whatsapp.com/send?phone=79779310006&message=" + msg, '_blank')
+        }
     }
 
     FOOD.updateOrderDishes = function (id, countFix) {
