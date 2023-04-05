@@ -53,7 +53,7 @@ NOTE: This is main stylesheet of template, This file contains the styling for th
     General
 *************************/
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
     font-weight: normal;
     font-style: normal;
     font-size: 14px;
@@ -4764,7 +4764,7 @@ select {
     font-size: 60px;
     line-height: 60px;
     font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
     text-transform: uppercase;
     margin-bottom: 10px;
 }
