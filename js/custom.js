@@ -360,16 +360,7 @@
                     name: 'Куриная лапша с фрикадельками из курицы',
                     description: 'Традиционный куриный суп,но с куриными фрикадельками 300гр.'
                 },
-                // {
-                //     id: 380,
-                //     category: 6,
-                //     price: 309,
-                //     available: true,
-                //     positionLeft: 0,
-                //     name: 'Свинина по-французски',
-                //     description: 'Запеченое мясо свинины под сырной шапкой с грибами 190гр'
-                // }
-                , {
+                {
                     id: 390,
                     category: 6,
                     price: 519,
@@ -1010,6 +1001,7 @@
     FOOD.getDish = function (id) {
         // достать из каталога товар по ID
         for (let i = 0; i < FOOD.catalog.length; i++) {
+            console.log(FOOD.catalog[i])
             if (FOOD.catalog[i].id == id) return FOOD.catalog[i]
         }
     }
