@@ -895,15 +895,27 @@
     }
 
     FOOD.orderSubmit = function (who) {
+        let validate = []
         if (ORDER.customer.adress === null) {
+            validate.push('адрес')
             $('#address_client').css("border", '1px solid red')
-            return
+            // return
         }
         let phone = $('#phone_client').val()
         if (!phone) {
+            validate.push('номер телефона')
             $('#phone_client').css("border", '1px solid red')
+            //  return
+        }
+        if (validate.length) {
+            let errorMsg = 'Не указан ' + validate.join(' и ')
+            $('.order-error').css("color", 'red')
+            $('.order-error').css("padding", '0 16px')
+            $('.order-error').html(errorMsg)
             return
         }
+
+
         let message = {
             'Номер заказа': '-',
             'Время создания заказа': new Date(),
