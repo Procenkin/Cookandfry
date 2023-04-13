@@ -805,7 +805,6 @@
         })
 
         $('.btn-modal-order').click((e) => {
-            console.log('Корзина')
             $('#modal-order').show()
             FOOD.renderModalOrder()
         })
@@ -1044,7 +1043,6 @@
             ORDER.summ = (item.price * item.count) + ORDER.summ
         })
         ORDER.createOrder = new Date()
-        console.log(ORDER)
     }
 
     FOOD.modalOrder = function () {
@@ -1056,7 +1054,6 @@
     FOOD.getDish = function (id) {
         // достать из каталога товар по ID
         for (let i = 0; i < FOOD.catalog.length; i++) {
-            console.log(FOOD.catalog[i])
             if (FOOD.catalog[i].id == id) return FOOD.catalog[i]
         }
     }
