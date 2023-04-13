@@ -6073,3 +6073,8 @@ blockquote cite {
     height: 27px;
 }
 
+.menu-details {
+    width: 100%;
+    display: flex !important;
+    flex-direction: column;
+}
