@@ -751,6 +751,7 @@
             $('.btn-close-modal-buy').off("click")
             $('.btn-close-modal-buy').click((e) => {
                 FOOD.addToOrder(id)
+                $('#modal-food').hide()
             })
         })
         $('.btn-modal-zone').click((e) => {
@@ -815,23 +816,53 @@
     }
 
     FOOD.renderModalOrder = function () {
-        let str = '<div class="modal-order-list">'
-            + '<div><b>Адрес:</b> <input id="address_client" style="border: 1px solid #000" /></div>'
-            + '<div><b>Номер телефона:</b> <input id="phone_client" style="border: 1px solid #000" /></div>'
+        let countDishes = 0;
         ORDER.dishes.forEach((item) => {
-            str += '<div class="modal-order-list-row">'
-                + '<div class="modal-order-list-product"> ' + item.name + ' </div>'
-                + '<div class="modal-order-list-price"> ' + item.price * item.count + ' руб.</div>'
-                + '<div class="modal-order-list-count">'
-                + '<div class="modal-order-list-price"> <button class="decr btn-primary btn-set-count" prop-id="' + item.id + '">-</button> </div>'
-                + '<div class="modal-order-list-price">' + item.count + '</div>'
-                + '<div class="modal-order-list-price"> <button class="incr btn-primary btn-set-count" prop-id="' + item.id + '">+</button> </div>'
-                + '</div>'
+            countDishes += item.count
+        })
 
-                + '</div>'
+        let str = '<div class="modal-order-list">'
+
+            + '<div class="modal-order-count">' + countDishes + ' товара на ' + ORDER.summ + ' Р</div>'
+
+        ORDER.dishes.forEach((item) => {
+            let imgSrc = 'images/dish/low/' + item.id + '.jpg'
+            str += '<div class="order-menu-list">\n' +
+                '                    <div class="order-menu-item">\n' +
+                '                    <img class="order-menu-item-img" src="' + imgSrc + '" alt="">' +
+                '                    <div data-param-id="' + item.id + '" class="menu-title-js menu-title clearfix hand-open-dishes">\n' +
+                '                        <h4>' + item.name + '</h4>\n' +
+                '                    </div>\n' +
+                '                    </div>\n' +
+                '<div class="order-menu-item-footer">\n' +
+                '                        <span class="order-menu-item-footer-price"> ' + item.price + ' Р</span>\n' +
+                '<div class="order-menu-control"">' +
+                ' <button class="decr btn-primary btn-set-count order-menu-control-left" prop-id="' + item.id + '">-</button> ' +
+                '<div class="order-menu-control-count">' + item.count + '</div>' +
+                '<button class="incr btn-primary btn-set-count order-menu-control-left" prop-id="' + item.id + '">+</button> ' +
+                '</div>\n' +
+                // '                      <div class="menu-description">\n' +
+                // '                        <p> ' + item.description + '</p>\n ' +
+                // '                      </div>\n' +
+                '                    </div>\n' +
+                '                  </div>'
+
+
+            // str += '<div class="modal-order-list-row">'
+            //     + '<div class="modal-order-list-product"> ' + item.name + ' </div>'
+            //     + '<div class="modal-order-list-price"> ' + item.price * item.count + ' руб.</div>'
+            //     + '<div class="modal-order-list-count">'
+            //     + '<div class="modal-order-list-price"> <button class="decr btn-primary btn-set-count" prop-id="' + item.id + '">-</button> </div>'
+            //     + '<div class="modal-order-list-price">' + item.count + '</div>'
+            //     + '<div class="modal-order-list-price"> <button class="incr btn-primary btn-set-count" prop-id="' + item.id + '">+</button> </div>'
+            //     + '</div>'
+            //
+            //     + '</div>'
         })
         str += '</div>'
-        str += '<div><b>Итого:</b> ' + ORDER.summ + ' Р</div>'
+        str += '<div class="order-menu-total"><div><b>Сумма заказа:</b></div><div class="order-menu-item-footer-price"> ' + ORDER.summ + ' Р</div></div>'
+            + '<div><b>Адрес:</b> <input id="address_client" style="border:1px solid rgb(0 0 0 / 34%)" /></div>'
+            + '<div><b>Номер телефона:</b> <input id="phone_client" style="border: 1px solid rgb(0 0 0 / 34%)" /></div>'
         $('.modal-body-modal-order').html(str)
         $("#address_client").suggestions({
             token: "5a40e0b55bc59eb7238208f41d2bfd8350b359f7",
@@ -857,6 +888,7 @@
             FOOD.orderSubmit()
         })
 
+        $('.btn-order-submit-whatsApp').off("click")
         $('.btn-order-submit-whatsApp').click(() => {
             FOOD.orderSubmit('whatsApp')
         })
@@ -927,16 +959,16 @@
                 console.log(error)
             });
         } else {
-            let msg = 'Мой заказ:'
+            let msg = 'Добрый день! \n Примите заказ: \n'
             ORDER.dishes.forEach((item, i) => {
-                msg += i + 1 + '.' + ' ' + item.name + ' ' + item.count + 'шт.; '
-                // message['Позиции'].push({
-                //     'Название': item.name,
-                //     'Количество': item.count,
-                //     'ИД': item.id,
-                //     'Цена': item.price + ' Р',
-                // })
+                msg += i + 1 + '.' + ' ' + item.name + ' (' + item.count + ' шт.); \n'
             })
+
+            msg += 'Адрес доставки: '
+            msg += ORDER.customer.adress + '\n'
+            msg += 'Номер телефона: '
+            msg += phone + '\n'
+
             $('#modal-order').hide()
             ORDER = {
                 id: null,
@@ -956,6 +988,17 @@
             }
             FOOD.updateOrder()
             FOOD.renderBtnOrder()
+            fetch('https://formspree.io/f/xvonberk', {
+                method: 'POST',
+                body: JSON.stringify({Сообщение: msg, Дата_Заказа: ORDER.createOrder}),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                console.log(response)
+            }).catch(error => {
+                console.log(error)
+            })
             window.open("https://api.whatsapp.com/send?phone=79779310006&text=" + encodeURI(msg), '_blank')
         }
     }
@@ -1042,7 +1085,7 @@
             if (filterCatalog[i].positionLeft) {
                 htmlLeft += '<div data-param-id="' + filterCatalog[i].id + '" class="menu-body menu-left">\n' +
                     '                    <div class="menu-thumbnail">\n' +
-                    '                      <img data-param-id="' + filterCatalog[i].id + '" class="img-fluid center-block hand-open-dishes" src="' + imgSrc + '" alt="">\n' +
+                    '                      <img data-param-id="' + filterCatalog[i].id + '" class="img-fluid center-block hand-open-dishes img-menu-dishes" src="' + imgSrc + '" alt="">\n' +
                     '                    </div>\n' +
                     '                    <div class="menu-details">\n' +
                     '                      <div data-param-id="' + filterCatalog[i].id + '" class="menu-title-js menu-title clearfix hand-open-dishes">\n' +
@@ -1057,7 +1100,7 @@
             } else {
                 htmlRight += '<div data-param-id="' + filterCatalog[i].id + '" class="menu-body menu-left">\n' +
                     '                    <div class="menu-thumbnail">\n' +
-                    '                      <img data-param-id="' + filterCatalog[i].id + '" class="img-fluid center-block hand-open-dishes" src="' + imgSrc + '" alt="">\n' +
+                    '                      <img data-param-id="' + filterCatalog[i].id + '" class="img-fluid center-block hand-open-dishes img-menu-dishes" src="' + imgSrc + '" alt="">\n' +
                     '                    </div>\n' +
                     '                    <div class="menu-details">\n' +
                     '                      <div data-param-id="' + filterCatalog[i].id + '" class="menu-title-js menu-title clearfix hand-open-dishes">\n' +
