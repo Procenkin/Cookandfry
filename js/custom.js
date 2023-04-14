@@ -1031,7 +1031,7 @@
     FOOD.renderBtnOrder = function () {
         if (ORDER.summ !== 0) {
             $('.btn-modal-order').show()
-            $('.btn-modal-order').html(`Корзина | ${ORDER.summ} Р`)
+            $('.btn-modal-order').html(`<i class="fa fa-shopping-cart"></i> Корзина | ${ORDER.summ} Р`)
         } else {
             $('.btn-modal-order').hide()
         }
