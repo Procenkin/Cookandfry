@@ -970,7 +970,7 @@
                 console.log(error)
             });
         } else {
-            let msg = 'Добрый день! \n Примите заказ: \n'
+            let msg = 'Здравствуйте, пишу вам с сайта.  \n Мой заказ: \n'
             ORDER.dishes.forEach((item, i) => {
                 msg += i + 1 + '.' + ' ' + item.name + ' (' + item.count + ' шт.); \n'
             })
