@@ -127,15 +127,6 @@
                     description: 'Легкая закуска из сыра и грибов,с отварным яйцом 100гр.'
                 },
                 {
-                    id: 100,
-                    category: 2,
-                    price: 279,
-                    available: true,
-                    positionLeft: true,
-                    name: 'Битые огурцы',
-                    description: 'Интересная альтернатива маринованным огурцам 100гр.'
-                },
-                {
                     id: 110,
                     category: 2,
                     price: 459,
@@ -320,14 +311,6 @@
                     description: 'Просто отварные спагетти с добавлением сливочного масла и обжаренной курочки 200гр.'
                 },
                 {
-                    id: 330,
-                    category: 4,
-                    price: 339,
-                    available: true,
-                    positionLeft: true,
-                    name: 'Лазанья',
-                    description: 'Классика Италии 330гр.'
-                }, {
                     id: 340,
                     category: 5,
                     price: 239,
@@ -487,15 +470,6 @@
                     positionLeft: 1,
                     name: 'Тирамису',
                     description: 'Классический яичный десерт с печеньем и эспрессо  120гр.'
-                },
-                {
-                    id: 540,
-                    category: 8,
-                    price: 239,
-                    available: true,
-                    positionLeft: 1,
-                    name: 'Шоколадный фондан',
-                    description: 'Наслаждение для сладкоежек 70гр.'
                 },
                 {
                     id: 550,
