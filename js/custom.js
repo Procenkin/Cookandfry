@@ -50,7 +50,7 @@
                 {
                     id: 10,
                     category: 1,
-                    price: 249,
+                    price: 259,
                     available: true,
                     positionLeft: true,
                     name: 'Домашние сырники с сметаной и вареньем',
@@ -59,7 +59,7 @@
                 {
                     id: 20,
                     category: 1,
-                    price: 239,
+                    price: 249,
                     available: true,
                     positionLeft: true,
                     name: 'Блины классические',
@@ -68,7 +68,7 @@
                 {
                     id: 30,
                     category: 1,
-                    price: 289,
+                    price: 299,
                     available: true,
                     positionLeft: true,
                     name: 'Блины с ветчиной и сыром',
@@ -77,7 +77,7 @@
                 {
                     id: 40,
                     category: 1,
-                    price: 299,
+                    price: 309,
                     available: true,
                     positionLeft: 0,
                     name: 'Блины с жульеном из курицы и грибов',
@@ -86,7 +86,7 @@
                 {
                     id: 50,
                     category: 1,
-                    price: 219,
+                    price: 229,
                     available: true,
                     positionLeft: true,
                     name: 'Сладкие блины с бананом',
@@ -95,7 +95,7 @@
                 {
                     id: 60,
                     category: 1,
-                    price: 199,
+                    price: 209,
                     available: true,
                     positionLeft: 0,
                     name: 'Каша овсяная на молоке',
@@ -103,7 +103,7 @@
                 }, {
                     id: 70,
                     category: 1,
-                    price: 199,
+                    price: 209,
                     available: true,
                     positionLeft: 0,
                     name: 'Каша манная на молоке',
@@ -111,7 +111,7 @@
                 }, {
                     id: 80,
                     category: 2,
-                    price: 159,
+                    price: 169,
                     available: true,
                     positionLeft: 0,
                     name: 'Сырная закуска с чесноком',
@@ -120,7 +120,7 @@
                 {
                     id: 90,
                     category: 2,
-                    price: 159,
+                    price: 169,
                     available: true,
                     positionLeft: 0,
                     name: 'Сырная закуска с шампиньонами',
@@ -129,7 +129,7 @@
                 {
                     id: 100,
                     category: 2,
-                    price: 269,
+                    price: 279,
                     available: true,
                     positionLeft: true,
                     name: 'Битые огурцы',
@@ -138,7 +138,7 @@
                 {
                     id: 110,
                     category: 2,
-                    price: 449,
+                    price: 459,
                     available: true,
                     positionLeft: true,
                     name: 'Брускетта с ростбифом',
@@ -147,7 +147,7 @@
                 {
                     id: 120,
                     category: 2,
-                    price: 379,
+                    price: 389,
                     available: true,
                     positionLeft: true,
                     name: 'Брускетта с лососем собственного посола',
@@ -156,7 +156,7 @@
                 {
                     id: 130,
                     category: 3,
-                    price: 459,
+                    price: 469,
                     available: true,
                     positionLeft: true,
                     name: 'Цезарь с курицей',
@@ -164,7 +164,7 @@
                 }, {
                     id: 140,
                     category: 3,
-                    price: 559,
+                    price: 569,
                     available: true,
                     positionLeft: true,
                     name: 'Цезарь с креветками',
@@ -172,7 +172,7 @@
                 }, {
                     id: 150,
                     category: 3,
-                    price: 579,
+                    price: 589,
                     available: true,
                     positionLeft: true,
                     name: 'Салат с ростбифом',
@@ -180,7 +180,7 @@
                 }, {
                     id: 160,
                     category: 3,
-                    price: 589,
+                    price: 599,
                     available: true,
                     positionLeft: true,
                     name: 'Салат с креветками и авокадо',
@@ -188,7 +188,7 @@
                 }, {
                     id: 170,
                     category: 3,
-                    price: 289,
+                    price: 299,
                     available: true,
                     positionLeft: 0,
                     name: 'Овощной салат с сметаной/оливковым маслом',
@@ -196,7 +196,7 @@
                 }, {
                     id: 180,
                     category: 3,
-                    price: 189,
+                    price: 209,
                     available: true,
                     positionLeft: 0,
                     name: 'Сельдь под шубой',
@@ -204,7 +204,7 @@
                 }, {
                     id: 190,
                     category: 3,
-                    price: 269,
+                    price: 279,
                     available: true,
                     positionLeft: 0,
                     name: 'Салат курица с ананасом',
@@ -212,7 +212,7 @@
                 }, {
                     id: 200,
                     category: 2,
-                    price: 339,
+                    price: 349,
                     available: true,
                     positionLeft: 0,
                     name: 'Сэндвич с курицей',
@@ -220,7 +220,7 @@
                 }, {
                     id: 210,
                     category: 2,
-                    price: 339,
+                    price: 349,
                     available: true,
                     positionLeft: 0,
                     name: 'Сэндвич с ветчиной и сыром',
@@ -228,7 +228,7 @@
                 }, {
                     id: 220,
                     category: 2,
-                    price: 309,
+                    price: 319,
                     available: true,
                     positionLeft: 0,
                     name: 'Сэндвич в яйце',
@@ -236,7 +236,7 @@
                 }, {
                     id: 230,
                     category: 2,
-                    price: 359,
+                    price: 369,
                     available: true,
                     positionLeft: 0,
                     name: 'Сэндвич с лососем собственного посола',
@@ -245,7 +245,7 @@
                 {
                     id: 240,
                     category: 2,
-                    price: 869,
+                    price: 879,
                     available: true,
                     positionLeft: true,
                     name: 'Маринованный ростбиф',
@@ -254,7 +254,7 @@
                 {
                     id: 250,
                     category: 2,
-                    price: 519,
+                    price: 529,
                     available: true,
                     positionLeft: true,
                     name: 'Лосось собственного посола',
@@ -263,7 +263,7 @@
                 {
                     id: 260,
                     category: 2,
-                    price: 509,
+                    price: 519,
                     available: true,
                     positionLeft: 0,
                     name: 'Тар-тар из лосося',
@@ -272,7 +272,7 @@
                 {
                     id: 270,
                     category: 2,
-                    price: 509,
+                    price: 519,
                     available: true,
                     positionLeft: 1,
                     name: 'Тар-тар из говядины',
@@ -281,7 +281,7 @@
                 {
                     id: 280,
                     category: 2,
-                    price: 509,
+                    price: 519,
                     available: true,
                     positionLeft: true,
                     name: 'Карпаччо из говядины с кедровыми орехами и пармезаном',
@@ -289,7 +289,7 @@
                 }, {
                     id: 290,
                     category: 4,
-                    price: 519,
+                    price: 529,
                     available: true,
                     positionLeft: true,
                     name: 'Паста “Биск” с креветками',
@@ -297,7 +297,7 @@
                 }, {
                     id: 300,
                     category: 4,
-                    price: 489,
+                    price: 499,
                     available: true,
                     positionLeft: true,
                     name: 'Паста с брокколи и лососем',
@@ -305,7 +305,7 @@
                 }, {
                     id: 310,
                     category: 4,
-                    price: 289,
+                    price: 299,
                     available: true,
                     positionLeft: 0,
                     name: 'Паста в соусе из томатов и базилика',
@@ -313,7 +313,7 @@
                 }, {
                     id: 320,
                     category: 4,
-                    price: 209,
+                    price: 219,
                     available: true,
                     positionLeft: 0,
                     name: 'Детская паста с курицей',
@@ -322,7 +322,7 @@
                 {
                     id: 330,
                     category: 4,
-                    price: 329,
+                    price: 339,
                     available: true,
                     positionLeft: true,
                     name: 'Лазанья',
@@ -330,7 +330,7 @@
                 }, {
                     id: 340,
                     category: 5,
-                    price: 229,
+                    price: 239,
                     available: true,
                     positionLeft: true,
                     name: 'Крем-суп из грибов',
@@ -338,7 +338,7 @@
                 }, {
                     id: 350,
                     category: 5,
-                    price: 169,
+                    price: 179,
                     available: true,
                     positionLeft: 0,
                     name: 'Крем-суп из брокколи ',
@@ -346,7 +346,7 @@
                 }, {
                     id: 360,
                     category: 5,
-                    price: 229,
+                    price: 239,
                     available: true,
                     positionLeft: 0,
                     name: 'Борщ с чесноком и сметаной',
@@ -354,7 +354,7 @@
                 }, {
                     id: 370,
                     category: 5,
-                    price: 229,
+                    price: 239,
                     available: true,
                     positionLeft: true,
                     name: 'Куриная лапша с фрикадельками из курицы',
@@ -363,7 +363,7 @@
                 {
                     id: 390,
                     category: 6,
-                    price: 519,
+                    price: 529,
                     available: true,
                     positionLeft: 0,
                     name: 'Бефстроганов из говяжьей вырезки',
@@ -371,7 +371,7 @@
                 }, {
                     id: 400,
                     category: 6,
-                    price: 659,
+                    price: 669,
                     available: true,
                     positionLeft: 0,
                     name: 'Медальоны из говяжьей вырезки с соусом демиглясс',
@@ -379,7 +379,7 @@
                 }, {
                     id: 410,
                     category: 6,
-                    price: 369,
+                    price: 379,
                     available: true,
                     positionLeft: 0,
                     name: 'Медальоны из свиной вырезки с кисло-сладким соусом',
@@ -387,7 +387,7 @@
                 }, {
                     id: 420,
                     category: 6,
-                    price: 539,
+                    price: 549,
                     available: true,
                     positionLeft: 1,
                     name: 'Цыпленок Табака ',
@@ -395,7 +395,7 @@
                 }, {
                     id: 430,
                     category: 6,
-                    price: 579,
+                    price: 589,
                     available: true,
                     positionLeft: true,
                     name: 'Щечки говяжьи с соусом демиглясс',
@@ -403,7 +403,7 @@
                 }, {
                     id: 440,
                     category: 6,
-                    price: 569,
+                    price: 579,
                     available: true,
                     positionLeft: true,
                     name: 'Ребра свиные запеченые с темным пивом ',
@@ -411,7 +411,7 @@
                 }, {
                     id: 450,
                     category: 6,
-                    price: 359,
+                    price: 369,
                     available: true,
                     positionLeft: true,
                     name: 'Морской язык в цитрусовой панировке',
@@ -419,7 +419,7 @@
                 }, {
                     id: 460,
                     category: 6,
-                    price: 559,
+                    price: 569,
                     available: true,
                     positionLeft: 1,
                     name: 'Стейк из лосося с сливочно-лимонным соусом',
@@ -428,7 +428,7 @@
                 {
                     id: 470,
                     category: 6,
-                    price: 269,
+                    price: 279,
                     available: true,
                     positionLeft: 1,
                     name: 'Горбуша под маринадом',
@@ -437,7 +437,7 @@
                 {
                     id: 480,
                     category: 6,
-                    price: 769,
+                    price: 779,
                     available: true,
                     positionLeft: 0,
                     name: 'Рулька свиная с толченным картофелем и квашенной капустой',
@@ -446,7 +446,7 @@
                 {
                     id: 490,
                     category: 7,
-                    price: 100,
+                    price: 110,
                     available: true,
                     positionLeft: 0,
                     name: 'Толченка из картофеля',
@@ -455,7 +455,7 @@
                 {
                     id: 500,
                     category: 7,
-                    price: 100,
+                    price: 110,
                     available: true,
                     positionLeft: 1,
                     name: 'Гречка',
@@ -464,7 +464,7 @@
                 {
                     id: 510,
                     category: 7,
-                    price: 100,
+                    price: 110,
                     available: true,
                     positionLeft: 1,
                     name: 'Рис',
@@ -473,7 +473,7 @@
                 {
                     id: 520,
                     category: 7,
-                    price: 259,
+                    price: 269,
                     available: true,
                     positionLeft: 0,
                     name: 'Овощи Гриль',
@@ -482,7 +482,7 @@
                 {
                     id: 530,
                     category: 8,
-                    price: 269,
+                    price: 279,
                     available: true,
                     positionLeft: 1,
                     name: 'Тирамису',
@@ -491,7 +491,7 @@
                 {
                     id: 540,
                     category: 8,
-                    price: 229,
+                    price: 239,
                     available: true,
                     positionLeft: 1,
                     name: 'Шоколадный фондан',
@@ -500,7 +500,7 @@
                 {
                     id: 550,
                     category: 8,
-                    price: 149,
+                    price: 159,
                     available: true,
                     positionLeft: 0,
                     name: 'Трубочки с белковым кремом',
@@ -509,7 +509,7 @@
                 {
                     id: 560,
                     category: 8,
-                    price: 209,
+                    price: 219,
                     available: true,
                     positionLeft: 0,
                     name: 'Шарлотка домашняя',
@@ -518,7 +518,7 @@
                 {
                     id: 570,
                     category: 10,
-                    price: 329,
+                    price: 339,
                     available: true,
                     positionLeft: 1,
                     name: 'Апельсиновый фреш',
@@ -527,7 +527,7 @@
                 {
                     id: 580,
                     category: 10,
-                    price: 369,
+                    price: 379,
                     available: true,
                     positionLeft: 1,
                     name: 'Грейпфрутовый фреш ',
@@ -536,7 +536,7 @@
                 {
                     id: 590,
                     category: 10,
-                    price: 249,
+                    price: 259,
                     available: true,
                     positionLeft: 1,
                     name: 'Яблочный фреш ',
@@ -545,7 +545,7 @@
                 {
                     id: 600,
                     category: 10,
-                    price: 169,
+                    price: 179,
                     available: true,
                     positionLeft: 1,
                     name: 'Морковный фреш',
@@ -554,7 +554,7 @@
                 {
                     id: 610,
                     category: 10,
-                    price: 309,
+                    price: 319,
                     available: true,
                     positionLeft: 0,
                     name: 'Огуречный фреш',
@@ -563,7 +563,7 @@
                 {
                     id: 620,
                     category: 10,
-                    price: 309,
+                    price: 319,
                     available: true,
                     positionLeft: 0,
                     name: 'Томатный фреш',
@@ -572,7 +572,7 @@
                 {
                     id: 630,
                     category: 9,
-                    price: 239,
+                    price: 249,
                     available: true,
                     positionLeft: 1,
                     name: 'Молочный коктейль ванильный',
@@ -581,7 +581,7 @@
                 {
                     id: 640,
                     category: 9,
-                    price: 239,
+                    price: 249,
                     available: true,
                     positionLeft: 1,
                     name: 'Молочный коктейль шоколадный',
@@ -590,7 +590,7 @@
                 {
                     id: 650,
                     category: 9,
-                    price: 239,
+                    price: 249,
                     available: true,
                     positionLeft: 0,
                     name: 'Молочный коктейль банановый',
@@ -599,7 +599,7 @@
                 {
                     id: 660,
                     category: 9,
-                    price: 239,
+                    price: 249,
                     available: true,
                     positionLeft: 0,
                     name: 'Молочный коктейль клубничный',
@@ -608,7 +608,7 @@
                 {
                     id: 670,
                     category: 10,
-                    price: 129,
+                    price: 139,
                     available: true,
                     positionLeft: 0,
                     name: 'Морс клюквенный',
@@ -617,7 +617,7 @@
                 {
                     id: 680,
                     category: 10,
-                    price: 69,
+                    price: 79,
                     available: true,
                     positionLeft: 0,
                     name: 'Вода в ассортименте',
@@ -626,7 +626,7 @@
                 {
                     id: 690,
                     category: 11,
-                    price: 30,
+                    price: 40,
                     available: true,
                     positionLeft: 1,
                     name: 'Гренки из белого хлеба',
@@ -635,7 +635,7 @@
                 {
                     id: 700,
                     category: 11,
-                    price: 119,
+                    price: 129,
                     available: true,
                     positionLeft: 1,
                     name: 'Масло оливковое',
@@ -644,7 +644,7 @@
                 {
                     id: 710,
                     category: 11,
-                    price: 109,
+                    price: 119,
                     available: true,
                     positionLeft: 1,
                     name: 'Огурцы маринованные',
@@ -653,7 +653,7 @@
                 {
                     id: 720,
                     category: 11,
-                    price: 119,
+                    price: 129,
                     available: true,
                     positionLeft: 0,
                     name: 'Пармезан',
@@ -662,7 +662,7 @@
                 {
                     id: 730,
                     category: 11,
-                    price: 59,
+                    price: 69,
                     available: true,
                     positionLeft: 0,
                     name: 'Соус-крем Бальзамик',
@@ -671,7 +671,7 @@
                 {
                     id: 740,
                     category: 11,
-                    price: 25,
+                    price: 35,
                     available: true,
                     positionLeft: 0,
                     name: 'Хлеб',
