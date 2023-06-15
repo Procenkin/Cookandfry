@@ -1,30 +1,3 @@
-/*================================================
-[  Table of contents  ]
-================================================
-
-:: Predefined Variables
-:: Preloader
-:: Mega menu
-:: Back to top
-:: Search
-:: Parallax
-:: Owl carousel
-:: Counter
-:: Isotope
-:: Magnific Popup
-:: Tabs
-:: Datetimepicker
-:: Burger menu
-:: Accordion
-:: Progressbar
-:: Countdown
-:: NiceScroll
-:: PHP contact form
-
-======================================
-[ End table content ]
-======================================*/
-
 (function ($) {
 
     /*************************
@@ -671,6 +644,9 @@
         $countdownTimer = $('.countdown'),
         $counter = $('.counter');
 
+    FOOD.catalog.forEach((item) => {
+        if (item.category !== 10) item.price = Math.ceil(item.price - item.price / 10)
+    })
     //Check if function exists
     $.fn.exists = function () {
         return this.length > 0;
