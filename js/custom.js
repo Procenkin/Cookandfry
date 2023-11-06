@@ -3,28 +3,42 @@
     /*************************
      Predefined Variables
      *************************/
+    // menu: [
+    //     {id: 1, description: 'Поздние завтраки', name: 'coldSnacks', target: 'coldSnacks', active: true},
+    //     {id: 2, description: 'Холодные закуски', name: 'salads', target: 'salads', active: false},
+    //     {id: 3, description: 'Салаты', name: 'salads', target: 'salads', active: false},
+    //     {id: 4, description: 'Пасты', name: 'pastes', target: 'pastes', active: false},
+    //     {id: 5, description: 'Супы', name: 'soups', target: 'soups', active: false},
+    //     {id: 6, description: 'Основные блюда', name: 'main', target: 'main', active: false},
+    //     {id: 7, description: 'Гарниры', name: 'garnish', target: 'garnish', active: false},
+    //     {id: 8, description: 'Десерты', name: 'dessert', target: 'dessert', active: false},
+    //     {id: 9, description: 'Молочные напитки', name: 'milk', target: 'milk', active: false},
+    //     {id: 10, description: 'Напитки прохладительные', name: 'drink', target: 'drink', active: false},
+    //     {id: 11, description: 'Дополнительно', name: 'more', target: 'more', active: false},
+    //     {id: 12, description: 'Новинки от шефа', name: 'new', target: 'new', active: false},
+    // ],
     var FOOD = {
-            activeCategory: 1,
-            nameActiveCategory: 'coldSnacks',
+            activeCategory: 2,
+            nameActiveCategory: 'salads',
             menu: [
-                {id: 1, description: 'Поздние завтраки', name: 'coldSnacks', target: 'coldSnacks', active: true},
-                {id: 2, description: 'Холодные закуски', name: 'salads', target: 'salads', active: false},
+                {id: 2, description: 'Холодные закуски', name: 'salads', target: 'salads', active: true},
                 {id: 3, description: 'Салаты', name: 'salads', target: 'salads', active: false},
                 {id: 4, description: 'Пасты', name: 'pastes', target: 'pastes', active: false},
                 {id: 5, description: 'Супы', name: 'soups', target: 'soups', active: false},
                 {id: 6, description: 'Основные блюда', name: 'main', target: 'main', active: false},
                 {id: 7, description: 'Гарниры', name: 'garnish', target: 'garnish', active: false},
-                {id: 8, description: 'Десерты', name: 'dessert', target: 'dessert', active: false},
                 {id: 9, description: 'Молочные напитки', name: 'milk', target: 'milk', active: false},
                 {id: 10, description: 'Напитки прохладительные', name: 'drink', target: 'drink', active: false},
                 {id: 11, description: 'Дополнительно', name: 'more', target: 'more', active: false},
+                {id: 12, description: 'Новинки от шефа', name: 'new', target: 'new', active: false},
+                {id: 13, description: 'Все по 179', name: 'fix', target: 'fix', active: false},
             ],
             catalog: [
                 {
                     id: 10,
                     category: 1,
                     price: 259,
-                    available: true,
+                    available: false,
                     positionLeft: true,
                     name: 'Домашние сырники с сметаной и вареньем',
                     description: 'Классические сырники из  творога с вареньем из томленой клубники и малины 160гр.'
@@ -33,7 +47,7 @@
                     id: 20,
                     category: 1,
                     price: 249,
-                    available: true,
+                    available: false,
                     positionLeft: true,
                     name: 'Блины классические',
                     description: 'Подаются с сметаной 200гр.'
@@ -42,7 +56,7 @@
                     id: 30,
                     category: 1,
                     price: 299,
-                    available: true,
+                    available: false,
                     positionLeft: true,
                     name: 'Блины с ветчиной и сыром',
                     description: 'Сытные и нежные блинчики 190гр.'
@@ -51,7 +65,7 @@
                     id: 40,
                     category: 1,
                     price: 309,
-                    available: true,
+                    available: false,
                     positionLeft: 0,
                     name: 'Блины с жульеном из курицы и грибов',
                     description: 'Изысканное блюдо для гурманов 180гр.'
@@ -60,7 +74,7 @@
                     id: 50,
                     category: 1,
                     price: 229,
-                    available: true,
+                    available: false,
                     positionLeft: true,
                     name: 'Сладкие блины с бананом',
                     description: 'Идеально для любителей сладких блинчиков 190гр.'
@@ -69,7 +83,7 @@
                     id: 60,
                     category: 1,
                     price: 209,
-                    available: true,
+                    available: false,
                     positionLeft: 0,
                     name: 'Каша овсяная на молоке',
                     description: 'Классическая овсяная каша на молоке -идеально для детей и взрослых 240гр.'
@@ -77,7 +91,7 @@
                     id: 70,
                     category: 1,
                     price: 209,
-                    available: true,
+                    available: false,
                     positionLeft: 0,
                     name: 'Каша манная на молоке',
                     description: 'Отлично подходит для детей и взрослых 220гр.'
@@ -177,7 +191,7 @@
                     id: 200,
                     category: 2,
                     price: 349,
-                    available: true,
+                    available: false,
                     positionLeft: 0,
                     name: 'Сэндвич с курицей',
                     description: 'Сытный и сочный сэндвич 280гр.'
@@ -185,7 +199,7 @@
                     id: 210,
                     category: 2,
                     price: 349,
-                    available: true,
+                    available: false,
                     positionLeft: 0,
                     name: 'Сэндвич с ветчиной и сыром',
                     description: 'Альтернатива блинчикам 280гр.'
@@ -193,7 +207,7 @@
                     id: 220,
                     category: 2,
                     price: 319,
-                    available: true,
+                    available: false,
                     positionLeft: 0,
                     name: 'Сэндвич в яйце',
                     description: 'Как дома, но только вкуснее 260гр.'
@@ -201,7 +215,7 @@
                     id: 230,
                     category: 2,
                     price: 369,
-                    available: true,
+                    available: false,
                     positionLeft: 0,
                     name: 'Сэндвич с лососем собственного посола',
                     description: 'Гурманы оценят 170гр.'
@@ -270,7 +284,7 @@
                     id: 310,
                     category: 4,
                     price: 299,
-                    available: true,
+                    available: false,
                     positionLeft: 0,
                     name: 'Паста в соусе из томатов и базилика',
                     description: 'Классический томатный соус с базиликом и орегано 320гр.'
@@ -278,7 +292,7 @@
                     id: 320,
                     category: 4,
                     price: 219,
-                    available: true,
+                    available: false,
                     positionLeft: 0,
                     name: 'Детская паста с курицей',
                     description: 'Просто отварные спагетти с добавлением сливочного масла и обжаренной курочки 200гр.'
@@ -344,7 +358,7 @@
                     id: 420,
                     category: 6,
                     price: 549,
-                    available: true,
+                    available: false,
                     positionLeft: 1,
                     name: 'Цыпленок Табака ',
                     description: 'Все в лучших традициях этого блюда 300гр.'
@@ -360,7 +374,7 @@
                     id: 440,
                     category: 6,
                     price: 579,
-                    available: true,
+                    available: false,
                     positionLeft: true,
                     name: 'Ребра свиные запеченые с темным пивом ',
                     description: 'Томленые в темном пиве с приправами свиные ребра,подпеченные с соусом демиглясс 300гр.'
@@ -376,7 +390,7 @@
                     id: 460,
                     category: 6,
                     price: 569,
-                    available: true,
+                    available: false,
                     positionLeft: 1,
                     name: 'Стейк из лосося с сливочно-лимонным соусом',
                     description: 'Сочный стейк с лимонно-сливочным соусом 150гр.'
@@ -385,7 +399,7 @@
                     id: 470,
                     category: 6,
                     price: 279,
-                    available: true,
+                    available: false,
                     positionLeft: 1,
                     name: 'Горбуша под маринадом',
                     description: 'Известная с детства рыба из СССР  170гр.'
@@ -439,7 +453,7 @@
                     id: 530,
                     category: 8,
                     price: 279,
-                    available: true,
+                    available: false,
                     positionLeft: 1,
                     name: 'Тирамису',
                     description: 'Классический яичный десерт с печеньем и эспрессо  120гр.'
@@ -448,7 +462,7 @@
                     id: 550,
                     category: 8,
                     price: 159,
-                    available: true,
+                    available: false,
                     positionLeft: 0,
                     name: 'Трубочки с белковым кремом',
                     description: '2шт в порции 100гр.'
@@ -457,7 +471,7 @@
                     id: 560,
                     category: 8,
                     price: 219,
-                    available: true,
+                    available: false,
                     positionLeft: 0,
                     name: 'Шарлотка домашняя',
                     description: 'Традиционный яблочный пирог 150гр.'
@@ -624,6 +638,438 @@
                     name: 'Хлеб',
                     description: '2 кусочка'
                 },
+                {
+                    id: 760,
+                    category: 12,
+                    price: 309,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Запеченные рулетики из баклажан',
+                    description: 'Сырная начинка с добавлением чеснока и помидора 180гр.'
+                },
+                {
+                    id: 770,
+                    category: 12,
+                    price: 209,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Картофельные драники',
+                    description: 'Классические, подаются с сметаной 220гр.'
+                },
+                {
+                    id: 780,
+                    category: 12,
+                    price: 389,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Картофельные драники с соусом на основе креветок',
+                    description: 'Соус на основе креветок с добавлением сливок 230гр.'
+                },
+                {
+                    id: 790,
+                    category: 12,
+                    price: 389,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Картофельные драники с лососем собственного посола',
+                    description: 'Драники с лососем собственного посола, сырный крем 240гр.'
+                },
+                {
+                    id: 810,
+                    category: 12,
+                    price: 299,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Греческий салат',
+                    description: 'Свежие помидоры, хрустящий огурец, ароматный перец и аппетитные оливки — это лишь начало нашего кулинарного шедевра. Все эти ингредиенты щедро поливаются оливковым маслом, придающим салату особую гармонию и благородство. Но наш сырный крем становится настоящей короной этого блюда, сливаясь в неповторимую симфонию вкусов. Откройте для себя великолепие свежих овощей и гастрономическое удовольствие. 190гр.'
+                },
+                {
+                    id: 820,
+                    category: 12,
+                    price: 389,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Паста Карбонара',
+                    description: 'Погрузитесь в итальянскую гастрономическую сказку с нашей восхитительной пастой карбонара. Она завораживает своей изысканной простотой и безупречным сочетанием вкусов. Паста, приготовленная с тщательно отобранными ингредиентами, плавает в гладком сливочном соусе, который раскрывает свои нежные ноты на каждой вилке. Отдайтесь удовольствию и насладитесь классическим итальянским блюдом, которое покоряет сердца гурманов со всего мира. 250гр.'
+                },
+                {
+                    id: 830,
+                    category: 12,
+                    price: 359,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Паста с курицей и грибами в сливочно-сырном соусе',
+                    description: 'Доставьте своему вкусовому восприятию истинное наслаждение с нашей изумительной пастой, приготовленной с нежным куриным филе и ароматными грибами. Волшебное сочетание мягкого куриного филе и нежных грибов, плавающих на шелковистой сливочной основе, создают симфонию вкуса, которая пробуждает чувства и взрывает воображение. Завершите этот эпический кулинарный шедевр тонкими стружками пармезана, раскрывая его богатый и насыщенный аромат. Отдайтесь удовольствию и насладитесь великолепием итальянской кухни, которая уносит вас в уникальное кулинарное путешествие. 250гр.'
+                },
+                {
+                    id: 840,
+                    category: 12,
+                    price: 269,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Бутерброды со шпротами',
+                    description: 'обжаренный тост,балтийские шпроты на соусе тар-тар, 4-е тоста'
+                },
+                {
+                    id: 850,
+                    category: 12,
+                    price: 279,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Бутерброды с крабовым паштетом',
+                    description: 'Обжаренный тост,крабовый паштет с яйцом и домашним майонезом, 4-е тоста.'
+                },
+                {
+                    id: 860,
+                    category: 12,
+                    price: 279,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Рулетики из ветчины с сыром и чесноком',
+                    description: '4-е рулетика.'
+                },
+                {
+                    id: 870,
+                    category: 12,
+                    price: '-',
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Классический холодец',
+                    description: ''
+                },
+                {
+                    id: 880,
+                    category: 12,
+                    price: '-',
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Запеченая буженина',
+                    description: 'Маринованная с томатами и горчицей'
+                },
+                {
+                    id: 890,
+                    category: 12,
+                    price: '-',
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Запеченый куриный рулет с грибной начинкой',
+                    description: ''
+                },
+                {
+                    id: 900,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Борщ с говядиной',
+                    description: ''
+                },
+                {
+                    id: 910,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Крем-суп Грибной',
+                    description: ''
+                },
+                {
+                    id: 920,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Крем-суп из брокколи',
+                    description: ''
+                },
+                {
+                    id: 930,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Рассольник с курицей',
+                    description: ''
+                },
+                {
+                    id: 940,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Щи с курицей',
+                    description: ''
+                },
+                {
+                    id: 950,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Куриная лапша с фрикадельками',
+                    description: ''
+                },
+                {
+                    id: 960,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Уха из горбуши и пангасиуса',
+                    description: ''
+                },
+                {
+                    id: 970,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Суп Грибной с картофелем',
+                    description: ''
+                },
+                {
+                    id: 980,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Сельдь под шубой',
+                    description: ''
+                },
+                {
+                    id: 990,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Мимоза',
+                    description: ''
+                },
+                {
+                    id: 1000,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'оливье с курицей',
+                    description: ''
+                },
+                {
+                    id: 1010,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Винегрет',
+                    description: ''
+                },
+                {
+                    id: 1020,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Витаминный',
+                    description: ''
+                },
+                {
+                    id: 1030,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Овощной салат с маслом',
+                    description: ''
+                },
+                {
+                    id: 1040,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Свекла с чесноком и яблоком под майонезом',
+                    description: ''
+                },
+                {
+                    id: 1050,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Салат с консервированной горбушей и кукурузой',
+                    description: ''
+                },
+                {
+                    id: 1060,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Салат с крабовыми палочками',
+                    description: ''
+                },
+                {
+                    id: 1070,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Салат Чешский',
+                    description: ''
+                },
+                {
+                    id: 1080,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Куриная котлета(гарнир на выбор)',
+                    description: ''
+                },
+                {
+                    id: 1090,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Жареный морской язык с соусом из брокколи(гарнир на выбор)',
+                    description: ''
+                },
+                {
+                    id: 1100,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Куриная печень в сливочном соусе(гарнир на выбор)',
+                    description: ''
+                },
+                {
+                    id: 1110,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Куриная грудка в сливочном соусе(гарнир на выбор)',
+                    description: ''
+                },
+                {
+                    id: 1120,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Драники картофельные с сметаной',
+                    description: ''
+                },
+                {
+                    id: 1130,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Рагу из курицы с овощами',
+                    description: ''
+                },
+                {
+                    id: 1140,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Гуляш из свинины(гарнир на выбор)',
+                    description: ''
+                },
+                {
+                    id: 1150,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Свинина в кисло-сладком соусе(гарнир на выбор)',
+                    description: ''
+                },
+                {
+                    id: 1160,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Рыбная котлета с соусом из брокколи(гарнир на выбор)',
+                    description: ''
+                },
+                {
+                    id: 1170,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Тушеное говяжье сердце в сливочном соусе(гарнир на выбор)',
+                    description: ''
+                },
+                {
+                    id: 1180,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Тушеные куриные желудочки(гарнир на выбор)',
+                    description: ''
+                },
+                {
+                    id: 1190,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Жареный рис с курицей и овощами с соевым соусом и чесноком',
+                    description: ''
+                },
+                {
+                    id: 1200,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Макароны по-флотски',
+                    description: ''
+                },
+                {
+                    id: 1210,
+                    category: 13,
+                    price: 179,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Филе пангасиуса под маринадом(гарнир на выбор)',
+                    description: ''
+                },
+                {
+                    id: 1220,
+                    category: 13,
+                    price: 0,
+                    available: true,
+                    positionLeft: 0,
+                    name: 'Толченка из картофеля',
+                    description: 'Альтернатива пюре 150гр.'
+                },
+                {
+                    id: 1230,
+                    category: 13,
+                    price: 0,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Гречка',
+                    description: 'Отварная 150гр.'
+                },
+                {
+                    id: 1240,
+                    category: 13,
+                    price: 0,
+                    available: true,
+                    positionLeft: 1,
+                    name: 'Рис',
+                    description: 'Отварной 150гр.'
+                },
             ]
         },
         ORDER = {
@@ -645,7 +1091,7 @@
         $counter = $('.counter');
 
     FOOD.catalog.forEach((item) => {
-        if (item.category !== 10) item.price = Math.ceil(item.price - item.price / 10)
+        if (item.category !== 10 && item.category != 12  && item.category != 13) item.price = Math.ceil(item.price - item.price / 10)
     })
     //Check if function exists
     $.fn.exists = function () {
@@ -1040,6 +1486,7 @@
         let imgSrc = ''
         let filterCatalog = FOOD.catalog.filter(el => el.category == FOOD.activeCategory)
         for (let i = 0; i < filterCatalog.length; i++) {
+           if (!filterCatalog[i].available) continue
             imgSrc = 'images/dish/low/' + filterCatalog[i].id + '.jpg'
             if (filterCatalog[i].positionLeft) {
                 htmlLeft += '<div data-param-id="' + filterCatalog[i].id + '" class="menu-body menu-left">\n' +
