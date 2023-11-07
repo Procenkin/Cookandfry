@@ -3,20 +3,20 @@
     /*************************
      Predefined Variables
      *************************/
-    // menu: [
-    //     {id: 1, description: 'Поздние завтраки', name: 'coldSnacks', target: 'coldSnacks', active: true},
-    //     {id: 2, description: 'Холодные закуски', name: 'salads', target: 'salads', active: false},
-    //     {id: 3, description: 'Салаты', name: 'salads', target: 'salads', active: false},
-    //     {id: 4, description: 'Пасты', name: 'pastes', target: 'pastes', active: false},
-    //     {id: 5, description: 'Супы', name: 'soups', target: 'soups', active: false},
-    //     {id: 6, description: 'Основные блюда', name: 'main', target: 'main', active: false},
-    //     {id: 7, description: 'Гарниры', name: 'garnish', target: 'garnish', active: false},
-    //     {id: 8, description: 'Десерты', name: 'dessert', target: 'dessert', active: false},
-    //     {id: 9, description: 'Молочные напитки', name: 'milk', target: 'milk', active: false},
-    //     {id: 10, description: 'Напитки прохладительные', name: 'drink', target: 'drink', active: false},
-    //     {id: 11, description: 'Дополнительно', name: 'more', target: 'more', active: false},
-    //     {id: 12, description: 'Новинки от шефа', name: 'new', target: 'new', active: false},
-    // ],
+        // menu: [
+        //     {id: 1, description: 'Поздние завтраки', name: 'coldSnacks', target: 'coldSnacks', active: true},
+        //     {id: 2, description: 'Холодные закуски', name: 'salads', target: 'salads', active: false},
+        //     {id: 3, description: 'Салаты', name: 'salads', target: 'salads', active: false},
+        //     {id: 4, description: 'Пасты', name: 'pastes', target: 'pastes', active: false},
+        //     {id: 5, description: 'Супы', name: 'soups', target: 'soups', active: false},
+        //     {id: 6, description: 'Основные блюда', name: 'main', target: 'main', active: false},
+        //     {id: 7, description: 'Гарниры', name: 'garnish', target: 'garnish', active: false},
+        //     {id: 8, description: 'Десерты', name: 'dessert', target: 'dessert', active: false},
+        //     {id: 9, description: 'Молочные напитки', name: 'milk', target: 'milk', active: false},
+        //     {id: 10, description: 'Напитки прохладительные', name: 'drink', target: 'drink', active: false},
+        //     {id: 11, description: 'Дополнительно', name: 'more', target: 'more', active: false},
+        //     {id: 12, description: 'Новинки от шефа', name: 'new', target: 'new', active: false},
+        // ],
     var FOOD = {
             activeCategory: 2,
             nameActiveCategory: 'salads',
@@ -264,7 +264,8 @@
                     positionLeft: true,
                     name: 'Карпаччо из говядины с кедровыми орехами и пармезаном',
                     description: 'Тонкие слайсы замаринованного мяса в итальянских травах 75гр.'
-                }, {
+                },
+                {
                     id: 290,
                     category: 4,
                     price: 529,
@@ -416,7 +417,7 @@
                 {
                     id: 490,
                     category: 7,
-                    price: 110,
+                    price: 0,
                     available: true,
                     positionLeft: 0,
                     name: 'Толченка из картофеля',
@@ -425,7 +426,7 @@
                 {
                     id: 500,
                     category: 7,
-                    price: 110,
+                    price: 0,
                     available: true,
                     positionLeft: 1,
                     name: 'Гречка',
@@ -434,7 +435,7 @@
                 {
                     id: 510,
                     category: 7,
-                    price: 110,
+                    price: 0,
                     available: true,
                     positionLeft: 1,
                     name: 'Рис',
@@ -578,7 +579,7 @@
                 {
                     id: 680,
                     category: 10,
-                    price: 79,
+                    price: 69,
                     available: true,
                     positionLeft: 0,
                     name: 'Вода в ассортименте',
@@ -587,7 +588,7 @@
                 {
                     id: 690,
                     category: 11,
-                    price: 40,
+                    price: 30,
                     available: true,
                     positionLeft: 1,
                     name: 'Гренки из белого хлеба',
@@ -596,7 +597,7 @@
                 {
                     id: 700,
                     category: 11,
-                    price: 129,
+                    price: 119,
                     available: true,
                     positionLeft: 1,
                     name: 'Масло оливковое',
@@ -605,7 +606,7 @@
                 {
                     id: 710,
                     category: 11,
-                    price: 119,
+                    price: 109,
                     available: true,
                     positionLeft: 1,
                     name: 'Огурцы маринованные',
@@ -614,7 +615,7 @@
                 {
                     id: 720,
                     category: 11,
-                    price: 129,
+                    price: 119,
                     available: true,
                     positionLeft: 0,
                     name: 'Пармезан',
@@ -623,7 +624,7 @@
                 {
                     id: 730,
                     category: 11,
-                    price: 69,
+                    price: 59,
                     available: true,
                     positionLeft: 0,
                     name: 'Соус-крем Бальзамик',
@@ -632,7 +633,7 @@
                 {
                     id: 740,
                     category: 11,
-                    price: 35,
+                    price: 25,
                     available: true,
                     positionLeft: 0,
                     name: 'Хлеб',
@@ -1091,7 +1092,7 @@
         $counter = $('.counter');
 
     FOOD.catalog.forEach((item) => {
-        if (item.category !== 10 && item.category != 12  && item.category != 13) item.price = Math.ceil(item.price - item.price / 10)
+       // if (item.category !== 10 && item.category != 12 && item.category != 13) item.price = Math.ceil(item.price - item.price / 10)
     })
     //Check if function exists
     $.fn.exists = function () {
@@ -1486,7 +1487,7 @@
         let imgSrc = ''
         let filterCatalog = FOOD.catalog.filter(el => el.category == FOOD.activeCategory)
         for (let i = 0; i < filterCatalog.length; i++) {
-           if (!filterCatalog[i].available) continue
+            if (!filterCatalog[i].available) continue
             imgSrc = 'images/dish/low/' + filterCatalog[i].id + '.jpg'
             if (filterCatalog[i].positionLeft) {
                 htmlLeft += '<div data-param-id="' + filterCatalog[i].id + '" class="menu-body menu-left">\n' +
